@@ -405,7 +405,7 @@ def _WriteGULPInputFile(dataSets, filePath):
                     # If available, convert the forces to gradients and output.
 
                     if 'ForceSet' in dataSet:
-                        outputWriter.write("    gradients eV\n");
+                        outputWriter.write("    gradients eV/Angs\n");
 
                         for j, (fx, fy, fz) in enumerate(dataSet['ForceSet']):
                             # The gradients are *minus* the forces.

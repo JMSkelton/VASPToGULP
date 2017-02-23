@@ -700,7 +700,7 @@ observables
         1      -0.00904
         2       0.00078
         3       0.00078
-    gradients eV
+    gradients eV/Angs
         1       0.04233    -0.00000    -0.00000
         2      -0.04233    -0.00000    -0.00000
 end
@@ -728,7 +728,7 @@ observables
         1      -0.00243
         2       0.00003
         3       0.00003
-    gradients eV
+    gradients eV/Angs
         1       0.02117    -0.00000    -0.00000
         2      -0.02117    -0.00000    -0.00000
 end
@@ -756,7 +756,7 @@ observables
         1      -0.00245
         2       0.00001
         3       0.00001
-    gradients eV
+    gradients eV/Angs
         1      -0.02103    -0.00000    -0.00000
         2       0.02103    -0.00000    -0.00000
 end
@@ -784,7 +784,7 @@ observables
         1      -0.00908
         2       0.00073
         3       0.00073
-    gradients eV
+    gradients eV/Angs
         1      -0.04229    -0.00000    -0.00000
         2       0.04229    -0.00000    -0.00000
 end
@@ -812,7 +812,7 @@ observables
         1      -0.00905
         2       0.00077
         3       0.00077
-    gradients eV
+    gradients eV/Angs
         1      -0.04236    -0.00000    -0.00000
         2       0.04236    -0.00000    -0.00000
 end
@@ -840,7 +840,7 @@ observables
         1      -0.00242
         2       0.00004
         3       0.00004
-    gradients eV
+    gradients eV/Angs
         1      -0.02112    -0.00000    -0.00000
         2       0.02112    -0.00000    -0.00000
 end
@@ -868,7 +868,7 @@ observables
         1      -0.00242
         2       0.00003
         3       0.00003
-    gradients eV
+    gradients eV/Angs
         1       0.02107    -0.00000    -0.00000
         2      -0.02107    -0.00000    -0.00000
 end
@@ -896,7 +896,7 @@ observables
         1      -0.00905
         2       0.00077
         3       0.00077
-    gradients eV
+    gradients eV/Angs
         1       0.04229    -0.00000    -0.00000
         2      -0.04229    -0.00000    -0.00000
 end

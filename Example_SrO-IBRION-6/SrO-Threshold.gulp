@@ -388,7 +388,7 @@ space
 1
 
 observables
-    gradients eV
+    gradients eV/Angs
         1       0.04233    -0.00000    -0.00000
         2      -0.04233    -0.00000    -0.00000
 end
@@ -416,7 +416,7 @@ space
 1
 
 observables
-    gradients eV
+    gradients eV/Angs
         1      -0.04229    -0.00000    -0.00000
         2       0.04229    -0.00000    -0.00000
 end
@@ -440,7 +440,7 @@ space
 1
 
 observables
-    gradients eV
+    gradients eV/Angs
         1      -0.04236    -0.00000    -0.00000
         2       0.04236    -0.00000    -0.00000
 end
@@ -468,7 +468,7 @@ space
 1
 
 observables
-    gradients eV
+    gradients eV/Angs
         1       0.04229    -0.00000    -0.00000
         2      -0.04229    -0.00000    -0.00000
 end
