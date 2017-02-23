@@ -49,7 +49,7 @@ At the top of the file, a block of data is introduced by the comment:
 
 This contains the "main" (initial) structure along with the unique non-zero components of the calculated elastic-constant matrix and the calculated phonon frequencies and eigenvectors in an `observables` block.
 
-Below this are several blocks of data similar to the following:
+Below this are several blocks of data with headings similar to the following:
 
 ```
 # Calculated gradients/strain derivatives for Structure 1
