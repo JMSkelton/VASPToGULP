@@ -1,0 +1,474 @@
+# Calculated observables for SrO
+# ==============================
+
+name SrO
+
+vector
+        0.000000000      2.567104990      2.567104990
+        2.567104990      0.000000000      2.567104990
+        2.567104990      2.567104990      0.000000000
+
+cartesian 2
+    Sr   core     0.00000     0.00000     0.00000
+    O    core     2.56710     2.56710     2.56710
+
+space
+1
+
+observables
+    elastic 9
+        1  1     186.09296
+        1  2      48.32109
+        1  3      48.32109
+        2  2     186.09296
+        2  3      48.32109
+        3  3     186.09296
+        4  4      55.15255
+        5  5      55.15255
+        6  6      55.15255
+    mode
+          205.793914
+              0.000000   -0.393038   -0.000000
+              0.000000    0.919522   -0.000000
+    mode
+          205.793914
+              0.000000    0.000000   -0.393038
+              0.000000    0.000000    0.919522
+    mode
+          205.793914
+              0.393038   -0.000000   -0.000000
+             -0.919522   -0.000000   -0.000000
+    mode
+           -0.019476
+              0.465167    0.141120   -0.780529
+              0.198829    0.060320   -0.333627
+    mode
+           -0.019476
+              0.780781    0.077929    0.479406
+              0.333734    0.033310    0.204916
+    mode
+           -0.019476
+             -0.139724    0.905281    0.080405
+             -0.059723    0.386951    0.034368
+end
+
+
+# INFO: The gradient components and diagonal stress-tensor elements for structure 1 are below the set thresholds (gradients: 2.50e-02, stress: 1.00e-01) -> data set not output.
+
+
+# Calculated gradients/strain derivatives for Structure 2
+# =======================================================
+
+name SrO (Structure 2)
+
+vector
+        0.000000000      2.567104990      2.567104990
+        2.618447090      0.000000000      2.567104990
+        2.618447090      2.567104990      0.000000000
+
+cartesian 2
+    Sr   core     0.00000     0.00000     0.00000
+    O    core     2.61845     2.56710     2.56710
+
+space
+1
+
+observables
+    strain_derivatives
+        1       0.70380
+        2       0.19857
+        3       0.19857
+end
+
+
+# Calculated gradients/strain derivatives for Structure 3
+# =======================================================
+
+name SrO (Structure 3)
+
+vector
+        0.000000000      2.567104990      2.567104990
+        2.592776040      0.000000000      2.567104990
+        2.592776040      2.567104990      0.000000000
+
+cartesian 2
+    Sr   core     0.00000     0.00000     0.00000
+    O    core     2.59278     2.56710     2.56710
+
+space
+1
+
+observables
+    strain_derivatives
+        1       0.37159
+        2       0.10045
+        3       0.10045
+end
+
+
+# Calculated gradients/strain derivatives for Structure 4
+# =======================================================
+
+name SrO (Structure 4)
+
+vector
+        0.000000000      2.567104990      2.567104990
+        2.541433940      0.000000000      2.567104990
+        2.541433940      2.567104990      0.000000000
+
+cartesian 2
+    Sr   core     0.00000     0.00000     0.00000
+    O    core     2.54143     2.56710     2.56710
+
+space
+1
+
+observables
+    strain_derivatives
+        1      -0.41574
+        2      -0.10363
+        3      -0.10363
+end
+
+
+# Calculated gradients/strain derivatives for Structure 5
+# =======================================================
+
+name SrO (Structure 5)
+
+vector
+        0.000000000      2.567104990      2.567104990
+        2.515762890      0.000000000      2.567104990
+        2.515762890      2.567104990      0.000000000
+
+cartesian 2
+    Sr   core     0.00000     0.00000     0.00000
+    O    core     2.51576     2.56710     2.56710
+
+space
+1
+
+observables
+    strain_derivatives
+        1      -0.87894
+        2      -0.20950
+        3      -0.20950
+end
+
+
+# Calculated gradients/strain derivatives for Structure 6
+# =======================================================
+
+name SrO (Structure 6)
+
+vector
+        0.000000000      2.618447090      2.567104990
+        2.567104990      0.000000000      2.567104990
+        2.567104990      2.618447090      0.000000000
+
+cartesian 2
+    Sr   core     0.00000     0.00000     0.00000
+    O    core     2.56710     2.61845     2.56710
+
+space
+1
+
+observables
+    strain_derivatives
+        1       0.19856
+        2       0.70379
+        3       0.19856
+end
+
+
+# Calculated gradients/strain derivatives for Structure 7
+# =======================================================
+
+name SrO (Structure 7)
+
+vector
+        0.000000000      2.592776040      2.567104990
+        2.567104990      0.000000000      2.567104990
+        2.567104990      2.592776040      0.000000000
+
+cartesian 2
+    Sr   core     0.00000     0.00000     0.00000
+    O    core     2.56710     2.59278     2.56710
+
+space
+1
+
+observables
+    strain_derivatives
+        1       0.10045
+        2       0.37160
+        3       0.10045
+end
+
+
+# Calculated gradients/strain derivatives for Structure 8
+# =======================================================
+
+name SrO (Structure 8)
+
+vector
+        0.000000000      2.541433940      2.567104990
+        2.567104990      0.000000000      2.567104990
+        2.567104990      2.541433940      0.000000000
+
+cartesian 2
+    Sr   core     0.00000     0.00000     0.00000
+    O    core     2.56710     2.54143     2.56710
+
+space
+1
+
+observables
+    strain_derivatives
+        1      -0.10362
+        2      -0.41573
+        3      -0.10362
+end
+
+
+# Calculated gradients/strain derivatives for Structure 9
+# =======================================================
+
+name SrO (Structure 9)
+
+vector
+        0.000000000      2.515762890      2.567104990
+        2.567104990      0.000000000      2.567104990
+        2.567104990      2.515762890      0.000000000
+
+cartesian 2
+    Sr   core     0.00000     0.00000     0.00000
+    O    core     2.56710     2.51576     2.56710
+
+space
+1
+
+observables
+    strain_derivatives
+        1      -0.20947
+        2      -0.87891
+        3      -0.20947
+end
+
+
+# Calculated gradients/strain derivatives for Structure 10
+# ========================================================
+
+name SrO (Structure 10)
+
+vector
+        0.000000000      2.567104990      2.618447090
+        2.567104990      0.000000000      2.618447090
+        2.567104990      2.567104990      0.000000000
+
+cartesian 2
+    Sr   core     0.00000     0.00000     0.00000
+    O    core     2.56710     2.56710     2.61845
+
+space
+1
+
+observables
+    strain_derivatives
+        1       0.19857
+        2       0.19857
+        3       0.70380
+end
+
+
+# Calculated gradients/strain derivatives for Structure 11
+# ========================================================
+
+name SrO (Structure 11)
+
+vector
+        0.000000000      2.567104990      2.592776040
+        2.567104990      0.000000000      2.592776040
+        2.567104990      2.567104990      0.000000000
+
+cartesian 2
+    Sr   core     0.00000     0.00000     0.00000
+    O    core     2.56710     2.56710     2.59278
+
+space
+1
+
+observables
+    strain_derivatives
+        1       0.10046
+        2       0.10046
+        3       0.37160
+end
+
+
+# Calculated gradients/strain derivatives for Structure 12
+# ========================================================
+
+name SrO (Structure 12)
+
+vector
+        0.000000000      2.567104990      2.541433940
+        2.567104990      0.000000000      2.541433940
+        2.567104990      2.567104990      0.000000000
+
+cartesian 2
+    Sr   core     0.00000     0.00000     0.00000
+    O    core     2.56710     2.56710     2.54143
+
+space
+1
+
+observables
+    strain_derivatives
+        1      -0.10361
+        2      -0.10361
+        3      -0.41572
+end
+
+
+# Calculated gradients/strain derivatives for Structure 13
+# ========================================================
+
+name SrO (Structure 13)
+
+vector
+        0.000000000      2.567104990      2.515762890
+        2.567104990      0.000000000      2.515762890
+        2.567104990      2.567104990      0.000000000
+
+cartesian 2
+    Sr   core     0.00000     0.00000     0.00000
+    O    core     2.56710     2.56710     2.51576
+
+space
+1
+
+observables
+    strain_derivatives
+        1      -0.20949
+        2      -0.20949
+        3      -0.87892
+end
+
+
+# INFO: The gradient components and diagonal stress-tensor elements for structure 14 are below the set thresholds (gradients: 2.50e-02, stress: 1.00e-01) -> data set not output.
+# INFO: The gradient components and diagonal stress-tensor elements for structure 15 are below the set thresholds (gradients: 2.50e-02, stress: 1.00e-01) -> data set not output.
+# INFO: The gradient components and diagonal stress-tensor elements for structure 16 are below the set thresholds (gradients: 2.50e-02, stress: 1.00e-01) -> data set not output.
+# INFO: The gradient components and diagonal stress-tensor elements for structure 17 are below the set thresholds (gradients: 2.50e-02, stress: 1.00e-01) -> data set not output.
+# INFO: The gradient components and diagonal stress-tensor elements for structure 18 are below the set thresholds (gradients: 2.50e-02, stress: 1.00e-01) -> data set not output.
+# INFO: The gradient components and diagonal stress-tensor elements for structure 19 are below the set thresholds (gradients: 2.50e-02, stress: 1.00e-01) -> data set not output.
+# INFO: The gradient components and diagonal stress-tensor elements for structure 20 are below the set thresholds (gradients: 2.50e-02, stress: 1.00e-01) -> data set not output.
+# INFO: The gradient components and diagonal stress-tensor elements for structure 21 are below the set thresholds (gradients: 2.50e-02, stress: 1.00e-01) -> data set not output.
+# INFO: The gradient components and diagonal stress-tensor elements for structure 22 are below the set thresholds (gradients: 2.50e-02, stress: 1.00e-01) -> data set not output.
+# INFO: The gradient components and diagonal stress-tensor elements for structure 23 are below the set thresholds (gradients: 2.50e-02, stress: 1.00e-01) -> data set not output.
+# INFO: The gradient components and diagonal stress-tensor elements for structure 24 are below the set thresholds (gradients: 2.50e-02, stress: 1.00e-01) -> data set not output.
+# INFO: The gradient components and diagonal stress-tensor elements for structure 25 are below the set thresholds (gradients: 2.50e-02, stress: 1.00e-01) -> data set not output.
+
+
+# Calculated gradients/strain derivatives for Structure 26
+# ========================================================
+
+name SrO (Structure 26)
+
+vector
+        0.000000000      2.567104990      2.567104990
+        2.567104990      0.000000000      2.567104990
+        2.567104990      2.567104990      0.000000000
+
+cartesian 2
+    Sr   core     0.02000     0.00000     0.00000
+    O    core     2.56710     2.56710     2.56710
+
+space
+1
+
+observables
+    gradients eV
+        1       0.04233    -0.00000    -0.00000
+        2      -0.04233    -0.00000    -0.00000
+end
+
+
+# INFO: The gradient components and diagonal stress-tensor elements for structure 27 are below the set thresholds (gradients: 2.50e-02, stress: 1.00e-01) -> data set not output.
+# INFO: The gradient components and diagonal stress-tensor elements for structure 28 are below the set thresholds (gradients: 2.50e-02, stress: 1.00e-01) -> data set not output.
+
+
+# Calculated gradients/strain derivatives for Structure 29
+# ========================================================
+
+name SrO (Structure 29)
+
+vector
+        0.000000000      2.567104990      2.567104990
+        2.567104990      0.000000000      2.567104990
+        2.567104990      2.567104990      0.000000000
+
+cartesian 2
+    Sr   core    -0.02000     0.00000     0.00000
+    O    core     2.56710     2.56710     2.56710
+
+space
+1
+
+observables
+    gradients eV
+        1      -0.04229    -0.00000    -0.00000
+        2       0.04229    -0.00000    -0.00000
+end
+
+
+# Calculated gradients/strain derivatives for Structure 30
+# ========================================================
+
+name SrO (Structure 30)
+
+vector
+        0.000000000      2.567104990      2.567104990
+        2.567104990      0.000000000      2.567104990
+        2.567104990      2.567104990      0.000000000
+
+cartesian 2
+    Sr   core     0.00000     0.00000     0.00000
+    O    core     2.58710     2.56710     2.56710
+
+space
+1
+
+observables
+    gradients eV
+        1      -0.04236    -0.00000    -0.00000
+        2       0.04236    -0.00000    -0.00000
+end
+
+
+# INFO: The gradient components and diagonal stress-tensor elements for structure 31 are below the set thresholds (gradients: 2.50e-02, stress: 1.00e-01) -> data set not output.
+# INFO: The gradient components and diagonal stress-tensor elements for structure 32 are below the set thresholds (gradients: 2.50e-02, stress: 1.00e-01) -> data set not output.
+
+
+# Calculated gradients/strain derivatives for Structure 33
+# ========================================================
+
+name SrO (Structure 33)
+
+vector
+        0.000000000      2.567104990      2.567104990
+        2.567104990      0.000000000      2.567104990
+        2.567104990      2.567104990      0.000000000
+
+cartesian 2
+    Sr   core     0.00000     0.00000     0.00000
+    O    core     2.54710     2.56710     2.56710
+
+space
+1
+
+observables
+    gradients eV
+        1       0.04229    -0.00000    -0.00000
+        2      -0.04229    -0.00000    -0.00000
+end
