@@ -56,7 +56,7 @@ Below this are several blocks of data similar to the following:
 # =======================================================
 ```
 
-These are the initial and intermediate displaced structures along with the associated gradients/strain derivatives, where these are above the default thresholds (10<sup>-5</sup> eV &#8491;<sup>-1</sup>.
+These are the initial and intermediate displaced structures along with the associated gradients/strain derivatives, where these are above the default thresholds (10<sup>-5</sup> eV &#8491;<sup>-1</sup>).
 
 In this example, structures 2-25 correspond to lattice distortions, leading to changes in the stress tensor (strain derivatives). Structures 26-33 correspond to displacement of the O and Sr atoms along the <i>x</i> direction, producing opposing forces (gradients) on both atoms.
 
