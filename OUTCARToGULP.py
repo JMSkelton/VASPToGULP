@@ -119,10 +119,14 @@ def _ReadOUTCARFile(filePath = r"OUTCAR"):
 
         # Sanity checks.
 
-        assert sum(ionsPerType) == nions;
-		
-        assert len(atomTypes) == len(ionsPerType);
-        assert len(atomicMasses) == len(ionsPerType);
+        if sum(ionsPerType) != nions:
+            raise Exception("Error: Inconsistent NIONS and \"ions per type\" lines in input file \"{0}\".".format(filePath));
+
+        if len(atomTypes) != len(ionsPerType):
+            raise Exception("Error: Inconsistent number of atom types read from input file \"{0}\".".format(filePath));
+
+        if len(atomTypes) != len(ionsPerType):
+            raise Exception("Error: Inconsistent number of atomic masses read from input file \"{0}\".".format(filePath));
 
         # Scan through the remainder of the file and capture useful blocks of information.
 
@@ -225,7 +229,8 @@ def _ReadOUTCARFile(filePath = r"OUTCAR"):
                     if match:
                         # Sanity check.
 
-                        assert int(match.group('mode_index')) == i + 1;
+                        if int(match.group('mode_index')) != i + 1:
+                            raise Exception("Error: Unexpected mode index encountered while reading frequency/eigenvector block in \"{0}\".".format(filePath));
 
                         # We want the frequency in cm^-1.
 
@@ -277,7 +282,8 @@ def _ReadOUTCARFile(filePath = r"OUTCAR"):
         # If not, add None values in their place.
 
         if stressTensors != None:
-            assert len(stressTensors) == len(structures);
+            if len(stressTensors) != len(structures):
+                raise Exception("Error: Number of stress tensors does not match number of structures in input file \"{0}\".".format(filePath));
 
             for i, (latticeVectors, atomPositions, forceSet) in enumerate(structures):
                 structures[i] = (latticeVectors, atomPositions, stressTensors[i], forceSet);
@@ -302,10 +308,17 @@ def _ReadOUTCARFile(filePath = r"OUTCAR"):
         for atomType, atomCount in zip(atomTypes, ionsPerType):
             atomTypesList = atomTypesList + [atomType] * atomCount;
 
+        # Generate a list of atomic masses.
+
+        atomicMassesList = [];
+
+        for atomicMass, atomCount in zip(atomicMasses, ionsPerType):
+            atomicMassesList = atomicMassesList + [atomicMass] * atomCount;
+
         # Return the captured data.
 
         return (
-            formula, atomTypesList,
+            formula, atomTypesList, atomicMassesList,
             structures,
             (frequencies, eigenvectors) if frequencies != None else None,
             elasticConstantMatrix
@@ -511,7 +524,7 @@ if __name__ == "__main__":
 
     print("Reading \"{0}\"...".format(args.InputFile));
 
-    formula, atomTypesList, structures, phononModes, elasticConstantMatrix = _ReadOUTCARFile(args.InputFile);
+    formula, atomTypesList, atomicMassesList, structures, phononModes, elasticConstantMatrix = _ReadOUTCARFile(args.InputFile);
 
     print("");
 
