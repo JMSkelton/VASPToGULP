@@ -56,8 +56,8 @@ This should generate a plot (`ModeMap_PolyFit.png`) similar to the following:
 The potential-energy surface dominated by a quartic term at large displacements (try fitting with `--degree=2` to confirm that a quadratic term is insufficient).
 The largest displacements (<i>Q</i> = &plusmn;5 amu<sup>1/2</sup> &#8491;) produce an increase of ~5.5 eV in the total energy, which should result in some large restoring forces on the atoms, and large stresses on the cell.
 
-Converting the calculations to a GULP input file
-------------------------------------------------
+Preparing a GULP input file
+---------------------------
 
 The `OUTCARToGULP_ModeMap.py` script can be used to extract the structures, forces (gradients) and stress tensors (strain derivatives) from each `OUTCAR` file produced by the single-point calculations and to write them to a single GULP input file:
 
