@@ -20,6 +20,8 @@ For finite-differences calculations (e.g. `IBRION = 6` with `ISIF = 3`), the scr
 
 Optional thresholds controlling when gradients/strain derivatives are output can be set via the `--gradient_threshold` and `--stress_threshold` command-line parameters.
 
+It is also possible to have a fitting weight added to the elastic constants using the `--elastic_constants_weight` argument.
+
 The SrO/`IBRION 6` [example](./Example_SrO-IBRION-6) illustrates the basic usage of the script.
 
 `OUTCARToGULP_ModeMap.py`

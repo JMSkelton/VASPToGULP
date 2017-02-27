@@ -72,3 +72,30 @@ To do this, the `--gradient_threshold` and `--stress_threshold` command-line arg
 The output `SrO-Threshold.gulp` now contains data sets for a subset of the 33 structures, with the others replaced by single-line comments indicating they were omitted because the gradients/strain derivatives were below the set thresholds:
 
 `# INFO: The gradient components and diagonal stress-tensor elements for structure 1 are below the set thresholds (gradients: 2.50e-02, stress: 1.00e-01) -> data set not output.`
+
+Adding fitting weights
+----------------------
+
+For "hard" materials, the values of the elastic constants are likely to be large in comparison to other quantities such as stresses or gradients.
+
+To avoid them being too heavily weighted during the fitting procedure, an optional weight can be added to the obserables block written to the output files using the `--elastic_constants_weight` command-line argument:
+
+`python OUTCARToGULP.py -f OUTCAR.ref -o SrO-ECWeight.gulp --elastic_constants_weight=1e-3`
+
+This appends weights to the elastic constants in the observables block:
+
+```
+observables
+    elastic 9
+        1  1     186.09296
+        1  2      48.32109
+        ...
+```
+
+```
+observables
+    elastic 9
+        1  1     186.09296  0.0010
+        1  2      48.32109  0.0010
+        ...
+```

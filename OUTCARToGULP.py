@@ -337,13 +337,16 @@ def _ReadOUTCARFile(filePath = r"OUTCAR"):
 #   -> 'ElasticConstantMatrix' : a 6x6 matrix (optional).
 #   -> 'PhononModes' : a tuple of (frequencies, eigenvectors) (optional).
 
+# observablesWeights is an optional dictionary that can specify the weight assigned to a subset of the keys in dataSets.
+# At present, only 'ElasticConstantMatrix' will be used, if present.
+
 # Each entry in the list must contain at least the 'HeaderComment' key.
 # If 'Name', 'LatticeVectors', 'AtomTypes', and 'AtomPositions' are present, a minimal structure data block is output; if not, just the header comment is written.
 # If any of the optional 'StressTensor', 'ForceSet', 'ElasticConstantMatrix' or 'PhononModes' keys are present, these are added to the data block as "observables".
 
 # This code was refactored into a function to make it easier to arrange the output files in different ways depending on the data captured from the input file.
 
-def _WriteGULPInputFile(dataSets, filePath):
+def _WriteGULPInputFile(dataSets, filePath, observablesWeights = None):
     with open(filePath, 'w') as outputWriter:
         # To help format the output file, keep track of whether or not we are writing out the first data set, and whether the previous data set was a data block (or just a header comment in its place).
 
@@ -428,21 +431,52 @@ def _WriteGULPInputFile(dataSets, filePath):
                     # If available, output the non-zero elements of the upper triangle of the elastic-constant matrix.
 
                     if 'ElasticConstantMatrix' in dataSet:
+                        ecMatrix = dataSet['ElasticConstantMatrix'];
+
                         data = [];
 
                         for i in range(0, 6):
                             for j in range(i, 6):
-                                if dataSet['ElasticConstantMatrix'][i][j] != 0.0:
+                                if ecMatrix[i][j] != 0.0:
                                     data.append(
-                                        (i + 1, j + 1, elasticConstantMatrix[i][j])
+                                        (i + 1, j + 1, ecMatrix[i][j])
                                         );
 
                         outputWriter.write("    elastic {0}\n".format(len(data)));
 
+                        # If a weight for the elastic constants has been supplied via observablesWeights, add it.
+
+                        ecWeight = None;
+
+                        if observablesWeights != None and 'ElasticConstantMatrix' in observablesWeights:
+                            ecWeight = observablesWeights['ElasticConstantMatrix'];
+
                         for i, j, cij in data:
                             # The elastic constants need to be in GPa rather than kbar -> divide by 10.
 
-                            outputWriter.write("        {0}  {1}  {2: >12.5f}\n".format(i, j, cij / 10.0));
+                            cij = cij / 10.0;
+
+                            if ecWeight != None:
+                                outputWriter.write("        {0}  {1}  {2: >12.5f}  {3:.4f}\n".format(i, j, cij, ecWeight));
+                            else:
+                                outputWriter.write("        {0}  {1}  {2: >12.5f}\n".format(i, j, cij));
+
+                        # We also calculate the bulk and shear moduli and add them as observables.
+
+                        c11, c22, c33, c44, c55, c66 = [ecMatrix[i][i] for i in range(0, 6)];
+                        c12, c23, c31 = ecMatrix[0][1], ecMatrix[1][2], ecMatrix[2][0];
+
+                        # The formulae used here are for the Voigt averages and were obtained from the Materials Project Wiki at https://materialsproject.org/wiki/index.php/Elasticity_calculations#Derived_elastic_properties.
+
+                        bulkModulus = (1.0 / 9.0) * ((c11 + c22 + c33) + 2.0 * (c12 + c23 + c31)) / 10.0;
+
+                        outputWriter.write("    bulk_modulus\n");
+                        outputWriter.write("        {0:.5f}\n".format(bulkModulus));
+
+                        shearModulus = (1.0 / 15.0) * ((c11 + c22 + c33) - (c12 + c23 + c31) + 3.0 * (c44 + c55 + c66)) / 10.0;
+
+                        outputWriter.write("    shear_modulus\n");
+                        outputWriter.write("        {0:.5f}\n".format(shearModulus));
 
                     # If available, output the phonon frequencies and eigenvectors.
 
@@ -483,7 +517,9 @@ if __name__ == "__main__":
         # The components of the forces on the atoms and the forces on the cell are output to 5 d.p. in the OUTCAR file, so 1.0e-5 is a "safe" default for both.
 
         GradientThreshold = 1.0e-5,
-        StressThreshold = 1.0e-5
+        StressThreshold = 1.0e-5,
+
+        ElasticConstantsWeight = None
         );
 
     parser.add_argument(
@@ -514,6 +550,13 @@ if __name__ == "__main__":
         help = "Threshold for the output of stress tensor components (strain derivatives); stress tensors where all components have absolute values less than this will not be output (default: 1.0e-5)"
         );
 
+    parser.add_argument(
+        "--elastic_constants_weight",
+        metavar = "<weight>",
+        type = float, dest = 'ElasticConstantsWeight',
+        help = "Fitting weight added to elastic constants observables in the output file (if written)"
+        );
+
     args = parser.parse_args();
 
     # Perform some basic validation.
@@ -523,6 +566,9 @@ if __name__ == "__main__":
 
     if args.StressThreshold < 0.0:
         raise Exception("Error: If supplied, the stress-tensor component threshold must be >= 0.");
+
+    if args.ElasticConstantsWeight != None and args.ElasticConstantsWeight < 0.0:
+        raise Exception("Error: If supplied, the elastic-constants weight must be >= 0.");
 
     # Read input file.
 
@@ -687,11 +733,18 @@ if __name__ == "__main__":
 
                 fileNumber = fileNumber + 1;
 
+    # Compile a set of observables weights, depending on the supplied command-line options.
+
+    observablesWeights = { };
+
+    if args.ElasticConstantsWeight != None:
+        observablesWeights['ElasticConstantMatrix'] = args.ElasticConstantsWeight;
+
     # Write the output file.
 
     print("Writing data to \"{0}\"...".format(outputFile));
 
-    _WriteGULPInputFile(dataSets, outputFile);
+    _WriteGULPInputFile(dataSets, outputFile, observablesWeights = observablesWeights);
 
     print("");
 
