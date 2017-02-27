@@ -1,5 +1,5 @@
-Example: SrO `ModeMap.py` Calculation
-=====================================
+Example: SrO "ModeMap" Calculation
+==================================
 
 This example uses the [ModeMap tool](https://github.com/JMSkelton/ModeMap) to generate a potential-energy map along one of the &Gamma;-point optic modes of SrO.
 
