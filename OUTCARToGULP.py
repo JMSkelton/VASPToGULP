@@ -488,24 +488,28 @@ if __name__ == "__main__":
 
     parser.add_argument(
         "-f", "--input_file",
-        type = str, dest = 'InputFile',
+        metavar = "<input_file>",
+        type = str, dest = 'InputFile', 
         help = "Input file to read (default: OUTCAR)"
         );
 
     parser.add_argument(
         "-o", "--output_file",
+        metavar = "<output_file>",
         type = str, dest = 'OutputFile',
         help = "Output file (default: automatically determined)"
         );
 
     parser.add_argument(
         "--gradient_threshold",
+        metavar = "<threshold>",
         type = float, dest = 'GradientThreshold',
         help = "Threshold for the output of forces (gradients); sets of gradients where all components have absolute values less than this will not be output (default: 1.0e-5)"
         );
 
     parser.add_argument(
         "--stress_threshold",
+        metavar = "<threshold>",
         type = float, dest = 'StressThreshold',
         help = "Threshold for the output of stress tensor components (strain derivatives); stress tensors where all components have absolute values less than this will not be output (default: 1.0e-5)"
         );
