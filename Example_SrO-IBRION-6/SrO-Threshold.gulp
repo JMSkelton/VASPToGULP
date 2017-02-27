@@ -3,12 +3,12 @@
 
 name SrO
 
-vector
+vectors Angs
         0.000000000      2.567104990      2.567104990
         2.567104990      0.000000000      2.567104990
         2.567104990      2.567104990      0.000000000
 
-cartesian 2
+cart
     Sr   core     0.00000     0.00000     0.00000
     O    core     2.56710     2.56710     2.56710
 
@@ -61,12 +61,12 @@ end
 
 name SrO (Structure 2)
 
-vector
+vectors Angs
         0.000000000      2.567104990      2.567104990
         2.618447090      0.000000000      2.567104990
         2.618447090      2.567104990      0.000000000
 
-cartesian 2
+cart
     Sr   core     0.00000     0.00000     0.00000
     O    core     2.61845     2.56710     2.56710
 
@@ -74,7 +74,7 @@ space
 1
 
 observables
-    strain_derivatives
+    strain_derivative eV
         1       0.70380
         2       0.19857
         3       0.19857
@@ -86,12 +86,12 @@ end
 
 name SrO (Structure 3)
 
-vector
+vectors Angs
         0.000000000      2.567104990      2.567104990
         2.592776040      0.000000000      2.567104990
         2.592776040      2.567104990      0.000000000
 
-cartesian 2
+cart
     Sr   core     0.00000     0.00000     0.00000
     O    core     2.59278     2.56710     2.56710
 
@@ -99,7 +99,7 @@ space
 1
 
 observables
-    strain_derivatives
+    strain_derivative eV
         1       0.37159
         2       0.10045
         3       0.10045
@@ -111,12 +111,12 @@ end
 
 name SrO (Structure 4)
 
-vector
+vectors Angs
         0.000000000      2.567104990      2.567104990
         2.541433940      0.000000000      2.567104990
         2.541433940      2.567104990      0.000000000
 
-cartesian 2
+cart
     Sr   core     0.00000     0.00000     0.00000
     O    core     2.54143     2.56710     2.56710
 
@@ -124,7 +124,7 @@ space
 1
 
 observables
-    strain_derivatives
+    strain_derivative eV
         1      -0.41574
         2      -0.10363
         3      -0.10363
@@ -136,12 +136,12 @@ end
 
 name SrO (Structure 5)
 
-vector
+vectors Angs
         0.000000000      2.567104990      2.567104990
         2.515762890      0.000000000      2.567104990
         2.515762890      2.567104990      0.000000000
 
-cartesian 2
+cart
     Sr   core     0.00000     0.00000     0.00000
     O    core     2.51576     2.56710     2.56710
 
@@ -149,7 +149,7 @@ space
 1
 
 observables
-    strain_derivatives
+    strain_derivative eV
         1      -0.87894
         2      -0.20950
         3      -0.20950
@@ -161,12 +161,12 @@ end
 
 name SrO (Structure 6)
 
-vector
+vectors Angs
         0.000000000      2.618447090      2.567104990
         2.567104990      0.000000000      2.567104990
         2.567104990      2.618447090      0.000000000
 
-cartesian 2
+cart
     Sr   core     0.00000     0.00000     0.00000
     O    core     2.56710     2.61845     2.56710
 
@@ -174,7 +174,7 @@ space
 1
 
 observables
-    strain_derivatives
+    strain_derivative eV
         1       0.19856
         2       0.70379
         3       0.19856
@@ -186,12 +186,12 @@ end
 
 name SrO (Structure 7)
 
-vector
+vectors Angs
         0.000000000      2.592776040      2.567104990
         2.567104990      0.000000000      2.567104990
         2.567104990      2.592776040      0.000000000
 
-cartesian 2
+cart
     Sr   core     0.00000     0.00000     0.00000
     O    core     2.56710     2.59278     2.56710
 
@@ -199,7 +199,7 @@ space
 1
 
 observables
-    strain_derivatives
+    strain_derivative eV
         1       0.10045
         2       0.37160
         3       0.10045
@@ -211,12 +211,12 @@ end
 
 name SrO (Structure 8)
 
-vector
+vectors Angs
         0.000000000      2.541433940      2.567104990
         2.567104990      0.000000000      2.567104990
         2.567104990      2.541433940      0.000000000
 
-cartesian 2
+cart
     Sr   core     0.00000     0.00000     0.00000
     O    core     2.56710     2.54143     2.56710
 
@@ -224,7 +224,7 @@ space
 1
 
 observables
-    strain_derivatives
+    strain_derivative eV
         1      -0.10362
         2      -0.41573
         3      -0.10362
@@ -236,12 +236,12 @@ end
 
 name SrO (Structure 9)
 
-vector
+vectors Angs
         0.000000000      2.515762890      2.567104990
         2.567104990      0.000000000      2.567104990
         2.567104990      2.515762890      0.000000000
 
-cartesian 2
+cart
     Sr   core     0.00000     0.00000     0.00000
     O    core     2.56710     2.51576     2.56710
 
@@ -249,7 +249,7 @@ space
 1
 
 observables
-    strain_derivatives
+    strain_derivative eV
         1      -0.20947
         2      -0.87891
         3      -0.20947
@@ -261,12 +261,12 @@ end
 
 name SrO (Structure 10)
 
-vector
+vectors Angs
         0.000000000      2.567104990      2.618447090
         2.567104990      0.000000000      2.618447090
         2.567104990      2.567104990      0.000000000
 
-cartesian 2
+cart
     Sr   core     0.00000     0.00000     0.00000
     O    core     2.56710     2.56710     2.61845
 
@@ -274,7 +274,7 @@ space
 1
 
 observables
-    strain_derivatives
+    strain_derivative eV
         1       0.19857
         2       0.19857
         3       0.70380
@@ -286,12 +286,12 @@ end
 
 name SrO (Structure 11)
 
-vector
+vectors Angs
         0.000000000      2.567104990      2.592776040
         2.567104990      0.000000000      2.592776040
         2.567104990      2.567104990      0.000000000
 
-cartesian 2
+cart
     Sr   core     0.00000     0.00000     0.00000
     O    core     2.56710     2.56710     2.59278
 
@@ -299,7 +299,7 @@ space
 1
 
 observables
-    strain_derivatives
+    strain_derivative eV
         1       0.10046
         2       0.10046
         3       0.37160
@@ -311,12 +311,12 @@ end
 
 name SrO (Structure 12)
 
-vector
+vectors Angs
         0.000000000      2.567104990      2.541433940
         2.567104990      0.000000000      2.541433940
         2.567104990      2.567104990      0.000000000
 
-cartesian 2
+cart
     Sr   core     0.00000     0.00000     0.00000
     O    core     2.56710     2.56710     2.54143
 
@@ -324,7 +324,7 @@ space
 1
 
 observables
-    strain_derivatives
+    strain_derivative eV
         1      -0.10361
         2      -0.10361
         3      -0.41572
@@ -336,12 +336,12 @@ end
 
 name SrO (Structure 13)
 
-vector
+vectors Angs
         0.000000000      2.567104990      2.515762890
         2.567104990      0.000000000      2.515762890
         2.567104990      2.567104990      0.000000000
 
-cartesian 2
+cart
     Sr   core     0.00000     0.00000     0.00000
     O    core     2.56710     2.56710     2.51576
 
@@ -349,7 +349,7 @@ space
 1
 
 observables
-    strain_derivatives
+    strain_derivative eV
         1      -0.20949
         2      -0.20949
         3      -0.87892
@@ -375,12 +375,12 @@ end
 
 name SrO (Structure 26)
 
-vector
+vectors Angs
         0.000000000      2.567104990      2.567104990
         2.567104990      0.000000000      2.567104990
         2.567104990      2.567104990      0.000000000
 
-cartesian 2
+cart
     Sr   core     0.02000     0.00000     0.00000
     O    core     2.56710     2.56710     2.56710
 
@@ -403,12 +403,12 @@ end
 
 name SrO (Structure 29)
 
-vector
+vectors Angs
         0.000000000      2.567104990      2.567104990
         2.567104990      0.000000000      2.567104990
         2.567104990      2.567104990      0.000000000
 
-cartesian 2
+cart
     Sr   core    -0.02000     0.00000     0.00000
     O    core     2.56710     2.56710     2.56710
 
@@ -427,12 +427,12 @@ end
 
 name SrO (Structure 30)
 
-vector
+vectors Angs
         0.000000000      2.567104990      2.567104990
         2.567104990      0.000000000      2.567104990
         2.567104990      2.567104990      0.000000000
 
-cartesian 2
+cart
     Sr   core     0.00000     0.00000     0.00000
     O    core     2.58710     2.56710     2.56710
 
@@ -455,12 +455,12 @@ end
 
 name SrO (Structure 33)
 
-vector
+vectors Angs
         0.000000000      2.567104990      2.567104990
         2.567104990      0.000000000      2.567104990
         2.567104990      2.567104990      0.000000000
 
-cartesian 2
+cart
     Sr   core     0.00000     0.00000     0.00000
     O    core     2.54710     2.56710     2.56710
 

@@ -377,7 +377,7 @@ def _WriteGULPInputFile(dataSets, filePath):
 
                 # Output the lattice vectors.
 
-                outputWriter.write("vector\n");
+                outputWriter.write("vectors Angs\n");
 
                 for x, y, z in dataSet['LatticeVectors']:
                     outputWriter.write("    {0: >15.9f}  {1: >15.9f}  {2: >15.9f}\n".format(x, y, z));
@@ -386,7 +386,7 @@ def _WriteGULPInputFile(dataSets, filePath):
 
                 # Output the atom positions.
 
-                outputWriter.write("cartesian {0}\n".format(len(atomTypesList)));
+                outputWriter.write("cart\n");
 
                 for atomType, (x, y, z) in zip(dataSet['AtomTypesList'], dataSet['AtomPositions']):
                     outputWriter.write("    {0: <3}  core  {1: >10.5f}  {2: >10.5f}  {3: >10.5f}\n".format(atomType, x, y, z));
@@ -410,7 +410,7 @@ def _WriteGULPInputFile(dataSets, filePath):
                     # If available, output the diagonal components of the stress tensor.
 
                     if 'StressTensor' in dataSet:
-                        outputWriter.write("    strain_derivatives\n");
+                        outputWriter.write("    strain_derivative eV\n");
 
                         for j, element in enumerate(dataSet['StressTensor'][:3]):
                             outputWriter.write("        {0}  {1: >12.5f}\n".format(j + 1, element));
@@ -489,7 +489,7 @@ if __name__ == "__main__":
     parser.add_argument(
         "-f", "--input_file",
         metavar = "<input_file>",
-        type = str, dest = 'InputFile', 
+        type = str, dest = 'InputFile',
         help = "Input file to read (default: OUTCAR)"
         );
 

@@ -1,0 +1,899 @@
+# Data for mode map q = (0, 0, 0), v = 6 w/ Q = -5.00 amu^1/2 A, dU(Q) = 5400 meV
+# ===============================================================================
+
+name SrO (Input File 1 w/ Q = -5.00)
+
+vectors Angs
+        0.000000000      2.567104990      2.567104990
+        2.567104990      0.000000000      2.567104990
+        2.567104990      2.567104990      0.000000000
+
+cart
+    Sr   core     2.56710     2.56710     0.14845
+    O    core     2.56710     2.56710     1.75434
+
+space
+1
+
+observables
+    strain_derivative eV
+        1      -0.31910
+        2      -0.31910
+        3     -36.71669
+    gradients eV/Angs
+        1      -0.00000    -0.00000    22.50692
+        2      -0.00000    -0.00000   -22.50692
+end
+
+
+# Data for mode map q = (0, 0, 0), v = 6 w/ Q = -4.75 amu^1/2 A, dU(Q) = 4410 meV
+# ===============================================================================
+
+name SrO (Input File 2 w/ Q = -4.75)
+
+vectors Angs
+        0.000000000      2.567104990      2.567104990
+        2.567104990      0.000000000      2.567104990
+        2.567104990      2.567104990      0.000000000
+
+cart
+    Sr   core     2.56710     2.56710     0.14103
+    O    core     2.56710     2.56710     1.79498
+
+space
+1
+
+observables
+    strain_derivative eV
+        1      -0.22334
+        2      -0.22334
+        3     -31.58204
+    gradients eV/Angs
+        1      -0.00000    -0.00000    18.81854
+        2      -0.00000    -0.00000   -18.81854
+end
+
+
+# Data for mode map q = (0, 0, 0), v = 6 w/ Q = -4.50 amu^1/2 A, dU(Q) = 3582 meV
+# ===============================================================================
+
+name SrO (Input File 3 w/ Q = -4.50)
+
+vectors Angs
+        0.000000000      2.567104990      2.567104990
+        2.567104990      0.000000000      2.567104990
+        2.567104990      2.567104990      0.000000000
+
+cart
+    Sr   core     2.56710     2.56710     0.13361
+    O    core     2.56710     2.56710     1.83561
+
+space
+1
+
+observables
+    strain_derivative eV
+        1      -0.12713
+        2      -0.12713
+        3     -27.12266
+    gradients eV/Angs
+        1      -0.00000    -0.00000    15.73456
+        2      -0.00000    -0.00000   -15.73456
+end
+
+
+# Data for mode map q = (0, 0, 0), v = 6 w/ Q = -4.25 amu^1/2 A, dU(Q) = 2890 meV
+# ===============================================================================
+
+name SrO (Input File 4 w/ Q = -4.25)
+
+vectors Angs
+        0.000000000      2.567104990      2.567104990
+        2.567104990      0.000000000      2.567104990
+        2.567104990      2.567104990      0.000000000
+
+cart
+    Sr   core     2.56710     2.56710     0.12618
+    O    core     2.56710     2.56710     1.87625
+
+space
+1
+
+observables
+    strain_derivative eV
+        1      -0.03531
+        2      -0.03531
+        3     -23.19824
+    gradients eV/Angs
+        1      -0.00000    -0.00000    13.12309
+        2      -0.00000    -0.00000   -13.12309
+end
+
+
+# Data for mode map q = (0, 0, 0), v = 6 w/ Q = -4.00 amu^1/2 A, dU(Q) = 2314 meV
+# ===============================================================================
+
+name SrO (Input File 5 w/ Q = -4.00)
+
+vectors Angs
+        0.000000000      2.567104990      2.567104990
+        2.567104990      0.000000000      2.567104990
+        2.567104990      2.567104990      0.000000000
+
+cart
+    Sr   core     2.56710     2.56710     0.11876
+    O    core     2.56710     2.56710     1.91689
+
+space
+1
+
+observables
+    strain_derivative eV
+        1       0.04742
+        2       0.04742
+        3     -19.72159
+    gradients eV/Angs
+        1      -0.00000    -0.00000    10.89610
+        2      -0.00000    -0.00000   -10.89610
+end
+
+
+# Data for mode map q = (0, 0, 0), v = 6 w/ Q = -3.75 amu^1/2 A, dU(Q) = 1838 meV
+# ===============================================================================
+
+name SrO (Input File 6 w/ Q = -3.75)
+
+vectors Angs
+        0.000000000      2.567104990      2.567104990
+        2.567104990      0.000000000      2.567104990
+        2.567104990      2.567104990      0.000000000
+
+cart
+    Sr   core     2.56710     2.56710     0.11134
+    O    core     2.56710     2.56710     1.95753
+
+space
+1
+
+observables
+    strain_derivative eV
+        1       0.11792
+        2       0.11792
+        3     -16.64005
+    gradients eV/Angs
+        1      -0.00000    -0.00000     8.99426
+        2      -0.00000    -0.00000    -8.99426
+end
+
+
+# Data for mode map q = (0, 0, 0), v = 6 w/ Q = -3.50 amu^1/2 A, dU(Q) = 1445 meV
+# ===============================================================================
+
+name SrO (Input File 7 w/ Q = -3.50)
+
+vectors Angs
+        0.000000000      2.567104990      2.567104990
+        2.567104990      0.000000000      2.567104990
+        2.567104990      2.567104990      0.000000000
+
+cart
+    Sr   core     2.56710     2.56710     0.10392
+    O    core     2.56710     2.56710     1.99817
+
+space
+1
+
+observables
+    strain_derivative eV
+        1       0.17427
+        2       0.17427
+        3     -13.91911
+    gradients eV/Angs
+        1      -0.00000    -0.00000     7.37434
+        2      -0.00000    -0.00000    -7.37434
+end
+
+
+# Data for mode map q = (0, 0, 0), v = 6 w/ Q = -3.25 amu^1/2 A, dU(Q) = 1125 meV
+# ===============================================================================
+
+name SrO (Input File 8 w/ Q = -3.25)
+
+vectors Angs
+        0.000000000      2.567104990      2.567104990
+        2.567104990      0.000000000      2.567104990
+        2.567104990      2.567104990      0.000000000
+
+cart
+    Sr   core     2.56710     2.56710     0.09649
+    O    core     2.56710     2.56710     2.03881
+
+space
+1
+
+observables
+    strain_derivative eV
+        1       0.21625
+        2       0.21625
+        3     -11.53060
+    gradients eV/Angs
+        1      -0.00000    -0.00000     6.00124
+        2      -0.00000    -0.00000    -6.00124
+end
+
+
+# Data for mode map q = (0, 0, 0), v = 6 w/ Q = -3.00 amu^1/2 A, dU(Q) = 865 meV
+# ==============================================================================
+
+name SrO (Input File 9 w/ Q = -3.00)
+
+vectors Angs
+        0.000000000      2.567104990      2.567104990
+        2.567104990      0.000000000      2.567104990
+        2.567104990      2.567104990      0.000000000
+
+cart
+    Sr   core     2.56710     2.56710     0.08907
+    O    core     2.56710     2.56710     2.07944
+
+space
+1
+
+observables
+    strain_derivative eV
+        1       0.24313
+        2       0.24313
+        3      -9.44903
+    gradients eV/Angs
+        1      -0.00000    -0.00000     4.84430
+        2      -0.00000    -0.00000    -4.84430
+end
+
+
+# Data for mode map q = (0, 0, 0), v = 6 w/ Q = -2.75 amu^1/2 A, dU(Q) = 656 meV
+# ==============================================================================
+
+name SrO (Input File 10 w/ Q = -2.75)
+
+vectors Angs
+        0.000000000      2.567104990      2.567104990
+        2.567104990      0.000000000      2.567104990
+        2.567104990      2.567104990      0.000000000
+
+cart
+    Sr   core     2.56710     2.56710     0.08165
+    O    core     2.56710     2.56710     2.12008
+
+space
+1
+
+observables
+    strain_derivative eV
+        1       0.25583
+        2       0.25583
+        3      -7.64776
+    gradients eV/Angs
+        1      -0.00000    -0.00000     3.87554
+        2      -0.00000    -0.00000    -3.87554
+end
+
+
+# Data for mode map q = (0, 0, 0), v = 6 w/ Q = -2.50 amu^1/2 A, dU(Q) = 490 meV
+# ==============================================================================
+
+name SrO (Input File 11 w/ Q = -2.50)
+
+vectors Angs
+        0.000000000      2.567104990      2.567104990
+        2.567104990      0.000000000      2.567104990
+        2.567104990      2.567104990      0.000000000
+
+cart
+    Sr   core     2.56710     2.56710     0.07423
+    O    core     2.56710     2.56710     2.16072
+
+space
+1
+
+observables
+    strain_derivative eV
+        1       0.25550
+        2       0.25550
+        3      -6.10019
+    gradients eV/Angs
+        1      -0.00000    -0.00000     3.06950
+        2      -0.00000    -0.00000    -3.06950
+end
+
+
+# Data for mode map q = (0, 0, 0), v = 6 w/ Q = -2.25 amu^1/2 A, dU(Q) = 359 meV
+# ==============================================================================
+
+name SrO (Input File 12 w/ Q = -2.25)
+
+vectors Angs
+        0.000000000      2.567104990      2.567104990
+        2.567104990      0.000000000      2.567104990
+        2.567104990      2.567104990      0.000000000
+
+cart
+    Sr   core     2.56710     2.56710     0.06680
+    O    core     2.56710     2.56710     2.20136
+
+space
+1
+
+observables
+    strain_derivative eV
+        1       0.24354
+        2       0.24354
+        3      -4.78045
+    gradients eV/Angs
+        1      -0.00000    -0.00000     2.40324
+        2      -0.00000    -0.00000    -2.40324
+end
+
+
+# Data for mode map q = (0, 0, 0), v = 6 w/ Q = -2.00 amu^1/2 A, dU(Q) = 257 meV
+# ==============================================================================
+
+name SrO (Input File 13 w/ Q = -2.00)
+
+vectors Angs
+        0.000000000      2.567104990      2.567104990
+        2.567104990      0.000000000      2.567104990
+        2.567104990      2.567104990      0.000000000
+
+cart
+    Sr   core     2.56710     2.56710     0.05938
+    O    core     2.56710     2.56710     2.24200
+
+space
+1
+
+observables
+    strain_derivative eV
+        1       0.22179
+        2       0.22179
+        3      -3.66419
+    gradients eV/Angs
+        1      -0.00000    -0.00000     1.85642
+        2      -0.00000    -0.00000    -1.85642
+end
+
+
+# Data for mode map q = (0, 0, 0), v = 6 w/ Q = -1.75 amu^1/2 A, dU(Q) = 179 meV
+# ==============================================================================
+
+name SrO (Input File 14 w/ Q = -1.75)
+
+vectors Angs
+        0.000000000      2.567104990      2.567104990
+        2.567104990      0.000000000      2.567104990
+        2.567104990      2.567104990      0.000000000
+
+cart
+    Sr   core     2.56710     2.56710     0.05196
+    O    core     2.56710     2.56710     2.28264
+
+space
+1
+
+observables
+    strain_derivative eV
+        1       0.19225
+        2       0.19225
+        3      -2.72965
+    gradients eV/Angs
+        1      -0.00000    -0.00000     1.41125
+        2      -0.00000    -0.00000    -1.41125
+end
+
+
+# Data for mode map q = (0, 0, 0), v = 6 w/ Q = -1.50 amu^1/2 A, dU(Q) = 120 meV
+# ==============================================================================
+
+name SrO (Input File 15 w/ Q = -1.50)
+
+vectors Angs
+        0.000000000      2.567104990      2.567104990
+        2.567104990      0.000000000      2.567104990
+        2.567104990      2.567104990      0.000000000
+
+cart
+    Sr   core     2.56710     2.56710     0.04454
+    O    core     2.56710     2.56710     2.32327
+
+space
+1
+
+observables
+    strain_derivative eV
+        1       0.15740
+        2       0.15740
+        3      -1.95748
+    gradients eV/Angs
+        1      -0.00000    -0.00000     1.05219
+        2      -0.00000    -0.00000    -1.05219
+end
+
+
+# Data for mode map q = (0, 0, 0), v = 6 w/ Q = -1.25 amu^1/2 A, dU(Q) = 77 meV
+# =============================================================================
+
+name SrO (Input File 16 w/ Q = -1.25)
+
+vectors Angs
+        0.000000000      2.567104990      2.567104990
+        2.567104990      0.000000000      2.567104990
+        2.567104990      2.567104990      0.000000000
+
+cart
+    Sr   core     2.56710     2.56710     0.03711
+    O    core     2.56710     2.56710     2.36391
+
+space
+1
+
+observables
+    strain_derivative eV
+        1       0.12006
+        2       0.12006
+        3      -1.33118
+end
+
+
+# INFO: The gradient components and diagonal stress-tensor elements for "SrO (Input File 17 w/ Q = -1.00)" (OUTCAR-017) are below the set thresholds (gradients: 1.00e+00, stress: 1.00e+00) -> data set not output.
+# INFO: The gradient components and diagonal stress-tensor elements for "SrO (Input File 18 w/ Q = -0.75)" (OUTCAR-018) are below the set thresholds (gradients: 1.00e+00, stress: 1.00e+00) -> data set not output.
+# INFO: The gradient components and diagonal stress-tensor elements for "SrO (Input File 19 w/ Q = -0.50)" (OUTCAR-019) are below the set thresholds (gradients: 1.00e+00, stress: 1.00e+00) -> data set not output.
+# INFO: The gradient components and diagonal stress-tensor elements for "SrO (Input File 20 w/ Q = -0.25)" (OUTCAR-020) are below the set thresholds (gradients: 1.00e+00, stress: 1.00e+00) -> data set not output.
+# INFO: The gradient components and diagonal stress-tensor elements for "SrO (Input File 21 w/ Q = 0.00)" (OUTCAR-021) are below the set thresholds (gradients: 1.00e+00, stress: 1.00e+00) -> data set not output.
+# INFO: The gradient components and diagonal stress-tensor elements for "SrO (Input File 22 w/ Q = 0.25)" (OUTCAR-022) are below the set thresholds (gradients: 1.00e+00, stress: 1.00e+00) -> data set not output.
+# INFO: The gradient components and diagonal stress-tensor elements for "SrO (Input File 23 w/ Q = 0.50)" (OUTCAR-023) are below the set thresholds (gradients: 1.00e+00, stress: 1.00e+00) -> data set not output.
+# INFO: The gradient components and diagonal stress-tensor elements for "SrO (Input File 24 w/ Q = 0.75)" (OUTCAR-024) are below the set thresholds (gradients: 1.00e+00, stress: 1.00e+00) -> data set not output.
+# INFO: The gradient components and diagonal stress-tensor elements for "SrO (Input File 25 w/ Q = 1.00)" (OUTCAR-025) are below the set thresholds (gradients: 1.00e+00, stress: 1.00e+00) -> data set not output.
+
+
+# Data for mode map q = (0, 0, 0), v = 6 w/ Q = 1.25 amu^1/2 A, dU(Q) = 77 meV
+# ============================================================================
+
+name SrO (Input File 26 w/ Q = 1.25)
+
+vectors Angs
+        0.000000000      2.567104990      2.567104990
+        2.567104990      0.000000000      2.567104990
+        2.567104990      2.567104990      0.000000000
+
+cart
+    Sr   core     2.56710     2.56710     5.09710
+    O    core     2.56710     2.56710     2.77030
+
+space
+1
+
+observables
+    strain_derivative eV
+        1       0.12006
+        2       0.12006
+        3      -1.33118
+end
+
+
+# Data for mode map q = (0, 0, 0), v = 6 w/ Q = 1.50 amu^1/2 A, dU(Q) = 120 meV
+# =============================================================================
+
+name SrO (Input File 27 w/ Q = 1.50)
+
+vectors Angs
+        0.000000000      2.567104990      2.567104990
+        2.567104990      0.000000000      2.567104990
+        2.567104990      2.567104990      0.000000000
+
+cart
+    Sr   core     2.56710     2.56710     5.08967
+    O    core     2.56710     2.56710     2.81094
+
+space
+1
+
+observables
+    strain_derivative eV
+        1       0.15741
+        2       0.15741
+        3      -1.95747
+    gradients eV/Angs
+        1      -0.00000    -0.00000    -1.05219
+        2      -0.00000    -0.00000     1.05219
+end
+
+
+# Data for mode map q = (0, 0, 0), v = 6 w/ Q = 1.75 amu^1/2 A, dU(Q) = 179 meV
+# =============================================================================
+
+name SrO (Input File 28 w/ Q = 1.75)
+
+vectors Angs
+        0.000000000      2.567104990      2.567104990
+        2.567104990      0.000000000      2.567104990
+        2.567104990      2.567104990      0.000000000
+
+cart
+    Sr   core     2.56710     2.56710     5.08225
+    O    core     2.56710     2.56710     2.85157
+
+space
+1
+
+observables
+    strain_derivative eV
+        1       0.19224
+        2       0.19224
+        3      -2.72965
+    gradients eV/Angs
+        1      -0.00000    -0.00000    -1.41125
+        2      -0.00000    -0.00000     1.41125
+end
+
+
+# Data for mode map q = (0, 0, 0), v = 6 w/ Q = 2.00 amu^1/2 A, dU(Q) = 257 meV
+# =============================================================================
+
+name SrO (Input File 29 w/ Q = 2.00)
+
+vectors Angs
+        0.000000000      2.567104990      2.567104990
+        2.567104990      0.000000000      2.567104990
+        2.567104990      2.567104990      0.000000000
+
+cart
+    Sr   core     2.56710     2.56710     5.07483
+    O    core     2.56710     2.56710     2.89221
+
+space
+1
+
+observables
+    strain_derivative eV
+        1       0.22179
+        2       0.22179
+        3      -3.66418
+    gradients eV/Angs
+        1      -0.00000    -0.00000    -1.85642
+        2      -0.00000    -0.00000     1.85642
+end
+
+
+# Data for mode map q = (0, 0, 0), v = 6 w/ Q = 2.25 amu^1/2 A, dU(Q) = 359 meV
+# =============================================================================
+
+name SrO (Input File 30 w/ Q = 2.25)
+
+vectors Angs
+        0.000000000      2.567104990      2.567104990
+        2.567104990      0.000000000      2.567104990
+        2.567104990      2.567104990      0.000000000
+
+cart
+    Sr   core     2.56710     2.56710     5.06741
+    O    core     2.56710     2.56710     2.93285
+
+space
+1
+
+observables
+    strain_derivative eV
+        1       0.24354
+        2       0.24354
+        3      -4.78045
+    gradients eV/Angs
+        1      -0.00000    -0.00000    -2.40324
+        2      -0.00000    -0.00000     2.40324
+end
+
+
+# Data for mode map q = (0, 0, 0), v = 6 w/ Q = 2.50 amu^1/2 A, dU(Q) = 490 meV
+# =============================================================================
+
+name SrO (Input File 31 w/ Q = 2.50)
+
+vectors Angs
+        0.000000000      2.567104990      2.567104990
+        2.567104990      0.000000000      2.567104990
+        2.567104990      2.567104990      0.000000000
+
+cart
+    Sr   core     2.56710     2.56710     5.05998
+    O    core     2.56710     2.56710     2.97349
+
+space
+1
+
+observables
+    strain_derivative eV
+        1       0.25550
+        2       0.25550
+        3      -6.10019
+    gradients eV/Angs
+        1      -0.00000    -0.00000    -3.06950
+        2      -0.00000    -0.00000     3.06950
+end
+
+
+# Data for mode map q = (0, 0, 0), v = 6 w/ Q = 2.75 amu^1/2 A, dU(Q) = 656 meV
+# =============================================================================
+
+name SrO (Input File 32 w/ Q = 2.75)
+
+vectors Angs
+        0.000000000      2.567104990      2.567104990
+        2.567104990      0.000000000      2.567104990
+        2.567104990      2.567104990      0.000000000
+
+cart
+    Sr   core     2.56710     2.56710     5.05256
+    O    core     2.56710     2.56710     3.01413
+
+space
+1
+
+observables
+    strain_derivative eV
+        1       0.25582
+        2       0.25582
+        3      -7.64777
+    gradients eV/Angs
+        1      -0.00000    -0.00000    -3.87554
+        2      -0.00000    -0.00000     3.87554
+end
+
+
+# Data for mode map q = (0, 0, 0), v = 6 w/ Q = 3.00 amu^1/2 A, dU(Q) = 865 meV
+# =============================================================================
+
+name SrO (Input File 33 w/ Q = 3.00)
+
+vectors Angs
+        0.000000000      2.567104990      2.567104990
+        2.567104990      0.000000000      2.567104990
+        2.567104990      2.567104990      0.000000000
+
+cart
+    Sr   core     2.56710     2.56710     5.04514
+    O    core     2.56710     2.56710     3.05477
+
+space
+1
+
+observables
+    strain_derivative eV
+        1       0.24313
+        2       0.24313
+        3      -9.44903
+    gradients eV/Angs
+        1      -0.00000    -0.00000    -4.84430
+        2      -0.00000    -0.00000     4.84430
+end
+
+
+# Data for mode map q = (0, 0, 0), v = 6 w/ Q = 3.25 amu^1/2 A, dU(Q) = 1125 meV
+# ==============================================================================
+
+name SrO (Input File 34 w/ Q = 3.25)
+
+vectors Angs
+        0.000000000      2.567104990      2.567104990
+        2.567104990      0.000000000      2.567104990
+        2.567104990      2.567104990      0.000000000
+
+cart
+    Sr   core     2.56710     2.56710     5.03772
+    O    core     2.56710     2.56710     3.09540
+
+space
+1
+
+observables
+    strain_derivative eV
+        1       0.21625
+        2       0.21625
+        3     -11.53060
+    gradients eV/Angs
+        1      -0.00000    -0.00000    -6.00124
+        2      -0.00000    -0.00000     6.00124
+end
+
+
+# Data for mode map q = (0, 0, 0), v = 6 w/ Q = 3.50 amu^1/2 A, dU(Q) = 1445 meV
+# ==============================================================================
+
+name SrO (Input File 35 w/ Q = 3.50)
+
+vectors Angs
+        0.000000000      2.567104990      2.567104990
+        2.567104990      0.000000000      2.567104990
+        2.567104990      2.567104990      0.000000000
+
+cart
+    Sr   core     2.56710     2.56710     5.03029
+    O    core     2.56710     2.56710     3.13604
+
+space
+1
+
+observables
+    strain_derivative eV
+        1       0.17427
+        2       0.17427
+        3     -13.91911
+    gradients eV/Angs
+        1      -0.00000    -0.00000    -7.37434
+        2      -0.00000    -0.00000     7.37434
+end
+
+
+# Data for mode map q = (0, 0, 0), v = 6 w/ Q = 3.75 amu^1/2 A, dU(Q) = 1838 meV
+# ==============================================================================
+
+name SrO (Input File 36 w/ Q = 3.75)
+
+vectors Angs
+        0.000000000      2.567104990      2.567104990
+        2.567104990      0.000000000      2.567104990
+        2.567104990      2.567104990      0.000000000
+
+cart
+    Sr   core     2.56710     2.56710     5.02287
+    O    core     2.56710     2.56710     3.17668
+
+space
+1
+
+observables
+    strain_derivative eV
+        1       0.11792
+        2       0.11792
+        3     -16.64005
+    gradients eV/Angs
+        1      -0.00000    -0.00000    -8.99426
+        2      -0.00000    -0.00000     8.99426
+end
+
+
+# Data for mode map q = (0, 0, 0), v = 6 w/ Q = 4.00 amu^1/2 A, dU(Q) = 2314 meV
+# ==============================================================================
+
+name SrO (Input File 37 w/ Q = 4.00)
+
+vectors Angs
+        0.000000000      2.567104990      2.567104990
+        2.567104990      0.000000000      2.567104990
+        2.567104990      2.567104990      0.000000000
+
+cart
+    Sr   core     2.56710     2.56710     5.01545
+    O    core     2.56710     2.56710     3.21732
+
+space
+1
+
+observables
+    strain_derivative eV
+        1       0.04743
+        2       0.04743
+        3     -19.72158
+    gradients eV/Angs
+        1      -0.00000    -0.00000   -10.89610
+        2      -0.00000    -0.00000    10.89610
+end
+
+
+# Data for mode map q = (0, 0, 0), v = 6 w/ Q = 4.25 amu^1/2 A, dU(Q) = 2890 meV
+# ==============================================================================
+
+name SrO (Input File 38 w/ Q = 4.25)
+
+vectors Angs
+        0.000000000      2.567104990      2.567104990
+        2.567104990      0.000000000      2.567104990
+        2.567104990      2.567104990      0.000000000
+
+cart
+    Sr   core     2.56710     2.56710     5.00803
+    O    core     2.56710     2.56710     3.25796
+
+space
+1
+
+observables
+    strain_derivative eV
+        1      -0.03530
+        2      -0.03530
+        3     -23.19824
+    gradients eV/Angs
+        1      -0.00000    -0.00000   -13.12309
+        2      -0.00000    -0.00000    13.12309
+end
+
+
+# Data for mode map q = (0, 0, 0), v = 6 w/ Q = 4.50 amu^1/2 A, dU(Q) = 3582 meV
+# ==============================================================================
+
+name SrO (Input File 39 w/ Q = 4.50)
+
+vectors Angs
+        0.000000000      2.567104990      2.567104990
+        2.567104990      0.000000000      2.567104990
+        2.567104990      2.567104990      0.000000000
+
+cart
+    Sr   core     2.56710     2.56710     5.00060
+    O    core     2.56710     2.56710     3.29860
+
+space
+1
+
+observables
+    strain_derivative eV
+        1      -0.12712
+        2      -0.12712
+        3     -27.12266
+    gradients eV/Angs
+        1      -0.00000    -0.00000   -15.73456
+        2      -0.00000    -0.00000    15.73456
+end
+
+
+# Data for mode map q = (0, 0, 0), v = 6 w/ Q = 4.75 amu^1/2 A, dU(Q) = 4410 meV
+# ==============================================================================
+
+name SrO (Input File 40 w/ Q = 4.75)
+
+vectors Angs
+        0.000000000      2.567104990      2.567104990
+        2.567104990      0.000000000      2.567104990
+        2.567104990      2.567104990      0.000000000
+
+cart
+    Sr   core     2.56710     2.56710     4.99318
+    O    core     2.56710     2.56710     3.33923
+
+space
+1
+
+observables
+    strain_derivative eV
+        1      -0.22333
+        2      -0.22333
+        3     -31.58204
+    gradients eV/Angs
+        1      -0.00000    -0.00000   -18.81854
+        2      -0.00000    -0.00000    18.81854
+end
+
+
+# Data for mode map q = (0, 0, 0), v = 6 w/ Q = 5.00 amu^1/2 A, dU(Q) = 5400 meV
+# ==============================================================================
+
+name SrO (Input File 41 w/ Q = 5.00)
+
+vectors Angs
+        0.000000000      2.567104990      2.567104990
+        2.567104990      0.000000000      2.567104990
+        2.567104990      2.567104990      0.000000000
+
+cart
+    Sr   core     2.56710     2.56710     4.98576
+    O    core     2.56710     2.56710     3.37987
+
+space
+1
+
+observables
+    strain_derivative eV
+        1      -0.31910
+        2      -0.31910
+        3     -36.71669
+    gradients eV/Angs
+        1      -0.00000    -0.00000   -22.50692
+        2      -0.00000    -0.00000    22.50692
+end
