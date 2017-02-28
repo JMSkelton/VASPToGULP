@@ -1,3 +1,6 @@
+fit conp comp prop phonon eigenvectors
+
+
 # Calculated observables for SrO
 # ==============================
 
@@ -16,6 +19,8 @@ space
 1
 
 observables
+    energy eV
+        -12.64416890
     elastic 9
         1  1     186.09296
         1  2      48.32109
@@ -57,11 +62,8 @@ observables
 end
 
 
-# INFO: The gradient components and diagonal stress-tensor elements for structure 1 are below the set thresholds (gradients: 2.50e-02, stress: 1.00e-01) -> data set not output.
-
-
-# Calculated gradients/strain derivatives for Structure 2
-# =======================================================
+# Calculated energy, gradients and strain derivatives for SrO (Structure 2)
+# =========================================================================
 
 name SrO (Structure 2)
 
@@ -78,6 +80,8 @@ space
 1
 
 observables
+    energy eV
+        -12.63696142
     strain_derivative eV
         1       0.70380
         2       0.19857
@@ -85,8 +89,8 @@ observables
 end
 
 
-# Calculated gradients/strain derivatives for Structure 3
-# =======================================================
+# Calculated energy, gradients and strain derivatives for SrO (Structure 3)
+# =========================================================================
 
 name SrO (Structure 3)
 
@@ -103,6 +107,8 @@ space
 1
 
 observables
+    energy eV
+        -12.64228882
     strain_derivative eV
         1       0.37159
         2       0.10045
@@ -110,8 +116,8 @@ observables
 end
 
 
-# Calculated gradients/strain derivatives for Structure 4
-# =======================================================
+# Calculated energy, gradients and strain derivatives for SrO (Structure 4)
+# =========================================================================
 
 name SrO (Structure 4)
 
@@ -128,6 +134,8 @@ space
 1
 
 observables
+    energy eV
+        -12.64211514
     strain_derivative eV
         1      -0.41574
         2      -0.10363
@@ -135,8 +143,8 @@ observables
 end
 
 
-# Calculated gradients/strain derivatives for Structure 5
-# =======================================================
+# Calculated energy, gradients and strain derivatives for SrO (Structure 5)
+# =========================================================================
 
 name SrO (Structure 5)
 
@@ -153,6 +161,8 @@ space
 1
 
 observables
+    energy eV
+        -12.63558702
     strain_derivative eV
         1      -0.87894
         2      -0.20950
@@ -160,8 +170,8 @@ observables
 end
 
 
-# Calculated gradients/strain derivatives for Structure 6
-# =======================================================
+# Calculated energy, gradients and strain derivatives for SrO (Structure 6)
+# =========================================================================
 
 name SrO (Structure 6)
 
@@ -178,6 +188,8 @@ space
 1
 
 observables
+    energy eV
+        -12.63696144
     strain_derivative eV
         1       0.19856
         2       0.70379
@@ -185,8 +197,8 @@ observables
 end
 
 
-# Calculated gradients/strain derivatives for Structure 7
-# =======================================================
+# Calculated energy, gradients and strain derivatives for SrO (Structure 7)
+# =========================================================================
 
 name SrO (Structure 7)
 
@@ -203,6 +215,8 @@ space
 1
 
 observables
+    energy eV
+        -12.64228881
     strain_derivative eV
         1       0.10045
         2       0.37160
@@ -210,8 +224,8 @@ observables
 end
 
 
-# Calculated gradients/strain derivatives for Structure 8
-# =======================================================
+# Calculated energy, gradients and strain derivatives for SrO (Structure 8)
+# =========================================================================
 
 name SrO (Structure 8)
 
@@ -228,6 +242,8 @@ space
 1
 
 observables
+    energy eV
+        -12.64211514
     strain_derivative eV
         1      -0.10362
         2      -0.41573
@@ -235,8 +251,8 @@ observables
 end
 
 
-# Calculated gradients/strain derivatives for Structure 9
-# =======================================================
+# Calculated energy, gradients and strain derivatives for SrO (Structure 9)
+# =========================================================================
 
 name SrO (Structure 9)
 
@@ -253,6 +269,8 @@ space
 1
 
 observables
+    energy eV
+        -12.63558703
     strain_derivative eV
         1      -0.20947
         2      -0.87891
@@ -260,8 +278,8 @@ observables
 end
 
 
-# Calculated gradients/strain derivatives for Structure 10
-# ========================================================
+# Calculated energy, gradients and strain derivatives for SrO (Structure 10)
+# ==========================================================================
 
 name SrO (Structure 10)
 
@@ -278,6 +296,8 @@ space
 1
 
 observables
+    energy eV
+        -12.63696142
     strain_derivative eV
         1       0.19857
         2       0.19857
@@ -285,8 +305,8 @@ observables
 end
 
 
-# Calculated gradients/strain derivatives for Structure 11
-# ========================================================
+# Calculated energy, gradients and strain derivatives for SrO (Structure 11)
+# ==========================================================================
 
 name SrO (Structure 11)
 
@@ -303,6 +323,8 @@ space
 1
 
 observables
+    energy eV
+        -12.64228881
     strain_derivative eV
         1       0.10046
         2       0.10046
@@ -310,8 +332,8 @@ observables
 end
 
 
-# Calculated gradients/strain derivatives for Structure 12
-# ========================================================
+# Calculated energy, gradients and strain derivatives for SrO (Structure 12)
+# ==========================================================================
 
 name SrO (Structure 12)
 
@@ -328,6 +350,8 @@ space
 1
 
 observables
+    energy eV
+        -12.64211514
     strain_derivative eV
         1      -0.10361
         2      -0.10361
@@ -335,8 +359,8 @@ observables
 end
 
 
-# Calculated gradients/strain derivatives for Structure 13
-# ========================================================
+# Calculated energy, gradients and strain derivatives for SrO (Structure 13)
+# ==========================================================================
 
 name SrO (Structure 13)
 
@@ -353,6 +377,8 @@ space
 1
 
 observables
+    energy eV
+        -12.63558703
     strain_derivative eV
         1      -0.20949
         2      -0.20949
@@ -374,8 +400,8 @@ end
 # INFO: The gradient components and diagonal stress-tensor elements for structure 25 are below the set thresholds (gradients: 2.50e-02, stress: 1.00e-01) -> data set not output.
 
 
-# Calculated gradients/strain derivatives for Structure 26
-# ========================================================
+# Calculated energy, gradients and strain derivatives for SrO (Structure 26)
+# ==========================================================================
 
 name SrO (Structure 26)
 
@@ -392,6 +418,8 @@ space
 1
 
 observables
+    energy eV
+        -12.64374660
     gradients eV/Angs
         1       0.04233    -0.00000    -0.00000
         2      -0.04233    -0.00000    -0.00000
@@ -402,8 +430,8 @@ end
 # INFO: The gradient components and diagonal stress-tensor elements for structure 28 are below the set thresholds (gradients: 2.50e-02, stress: 1.00e-01) -> data set not output.
 
 
-# Calculated gradients/strain derivatives for Structure 29
-# ========================================================
+# Calculated energy, gradients and strain derivatives for SrO (Structure 29)
+# ==========================================================================
 
 name SrO (Structure 29)
 
@@ -420,14 +448,16 @@ space
 1
 
 observables
+    energy eV
+        -12.64374658
     gradients eV/Angs
         1      -0.04229    -0.00000    -0.00000
         2       0.04229    -0.00000    -0.00000
 end
 
 
-# Calculated gradients/strain derivatives for Structure 30
-# ========================================================
+# Calculated energy, gradients and strain derivatives for SrO (Structure 30)
+# ==========================================================================
 
 name SrO (Structure 30)
 
@@ -444,6 +474,8 @@ space
 1
 
 observables
+    energy eV
+        -12.64374655
     gradients eV/Angs
         1      -0.04236    -0.00000    -0.00000
         2       0.04236    -0.00000    -0.00000
@@ -454,8 +486,8 @@ end
 # INFO: The gradient components and diagonal stress-tensor elements for structure 32 are below the set thresholds (gradients: 2.50e-02, stress: 1.00e-01) -> data set not output.
 
 
-# Calculated gradients/strain derivatives for Structure 33
-# ========================================================
+# Calculated energy, gradients and strain derivatives for SrO (Structure 33)
+# ==========================================================================
 
 name SrO (Structure 33)
 
@@ -472,7 +504,14 @@ space
 1
 
 observables
+    energy eV
+        -12.64374656
     gradients eV/Angs
         1       0.04229    -0.00000    -0.00000
         2      -0.04229    -0.00000    -0.00000
 end
+
+
+output thb fit.thb
+output cif fit.cif
+dump fit.grs

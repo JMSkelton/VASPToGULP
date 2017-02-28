@@ -3,13 +3,13 @@ Example: SrO "ModeMap" Calculation
 
 This example uses the [ModeMap tool](https://github.com/JMSkelton/ModeMap) to generate a potential-energy map along one of the &Gamma;-point optic modes of SrO.
 
-A large range of the normal-mode coordinate <i>Q</i> is chosen in order to push the atoms into the anharmonic part of the potential, in order to obtain structural snapshots with large forces (gradients) and stresses (strain derivatives).
+A large range of the normal-mode coordinate <i>Q</i> is chosen in order to push the atoms into the anharmonic part of the potential, to obtain structural snapshots with high relative energies and large forces (gradients) and stresses (strain derivatives).
 
 Setup
 -----
 
 We assume that users are familiar with ModeMap, and already have the scripts up and running according to the [code documentation](https://github.com/JMSkelton/ModeMap).
-New users of the code are encouraged to first look at the examples included with it, as doing so will make some of the steps in this example easier to follow.
+New ModeMap users are encouraged to first look at the examples included with it, as doing so will make some of the steps in this example easier to follow.
 
 We will use the force constants obtained from the `IBRION 6` calculation in the SrO/`IBRION 6` [example](../Example_SrO-IBRION-6) as the required input to `Phonopy` via `ModeMap.py`.
 
@@ -17,11 +17,11 @@ Firstly, set up a &Gamma;-point finite-displacement calculation using the optimi
 
 `phonopy -d --dim="1 1 1" -c POSCAR.vasp`
 
-Next, take the `vasprun.xml` file from the SrO finite-displacements calculation and use `Phonopy` to generate a `FORCE_CONSTANTS` file:
+Next, take the `vasprun.xml` file from the SrO finite-differences calculation and use `Phonopy` to generate a `FORCE_CONSTANTS` file:
 
 `phonopy --fc vasprun.xml`
 
-We can now use `ModeMap.py` to generate a sequence of structures displaced along one of the &Gamma;-point optic modes:
+We can now use `ModeMap.py` to generate a sequence of structures displaced along one of the three &Gamma;-point optic modes:
 
 `python ModeMap.py -c POSCAR.vasp --dim="1 1 1" --readfc --mode="0 0 0 6" --q_range="-5 5 0.25" --supercell="1 1 1"`
 
@@ -36,7 +36,7 @@ These should be paired with the `Sr_sv` (`PAW_PBE Sr_sv 07Sep2000`) and `O` (`PA
 
 Running the calculation should produce a set of `OUTCAR` files similar to those in the `OUTCAR-Files.ref.tar.gz` archive.
 
-Once the calculation is finished, extract the total energies, e.g. using the `ExtractTotalEnergies.py` script bundled with `ModeMap`, to generate an `ExtractTotalEnergies.csv` file.
+Once the calculation is finished, extract the total energies, e.g. using the `ExtractTotalEnergies.py` script bundled with ModeMap, to generate an `ExtractTotalEnergies.csv` file.
 
 Post-processing the output
 --------------------------
@@ -45,7 +45,7 @@ First, run the ModeMap post-processing script to assign the total energies to no
 
 `python ModeMap_PostProcess.py`
 
-The `ModeMap_Polyfit.py` script can be used to inspect the potential-energy surface map along the mode:
+The `ModeMap_Polyfit.py` script can then be used to inspect the potential-energy surface map along the mode:
 
 `python ModeMap_PolyFit.py --degree=4 --plot_y="0 6000"`
 
@@ -59,22 +59,26 @@ The largest displacements (<i>Q</i> = &plusmn;5 amu<sup>1/2</sup> &#8491;) produ
 Preparing a GULP input file
 ---------------------------
 
-The `OUTCARToGULP_ModeMap.py` script can be used to extract the structures, forces (gradients) and stress tensors (strain derivatives) from each `OUTCAR` file produced by the single-point calculations and to write them to a single GULP input file:
+The `OUTCARToGULP_ModeMap.py` script can be used to extract the structures, total energies, forces (gradients) and stress tensors (strain derivatives) from each `OUTCAR` file produced by the single-point calculations and to write them to a single GULP input file:
 
 `python OUTCARToGULP_ModeMap.py OUTCAR-* -o "SrO-ModeMap.gulp" -n "q = (0, 0, 0), v = 6" --mode_map_csv="ModeMap_PostProcess.csv"`
 
 This will produce an output file named `SrO-ModeMap.gulp` with a block of data for each of the displaced structures.
 
-By providing an identifier (via the `-n` argument) and the path to the `ModeMap_PostProcess.csv` file (`--mode_map_csv`), each data block is prefixed with a header that records what the structure corresponds to:
+By providing an identifier (via the `-n` argument) and the path to the `ModeMap_PostProcess.csv` file generated in the previous step (`--mode_map_csv`), each data block is prefixed with a header that records what the structure corresponds to:
 
 ```
 # Data for mode map q = (0, 0, 0), v = 6 w/ Q = -4.75 amu^1/2 A, dU(Q) = 4410 meV
 # ===============================================================================
 ```
 
-As in the SrO/`IBRION 6` [example](../Example_SrO-IBRION-6), `OUTCARToGULP_ModeMap.py` accepts `--gradient_threshold` and `--stress_threshold` command-line arguments that can be used to exclude structures with smaller gradients/stresses if desired:
+As in the SrO/`IBRION 6` [example](../Example_SrO-IBRION-6), `OUTCARToGULP_ModeMap.py` accepts a `--add_commands` flag, which can be used to add basic GULP commands to the output file:
 
-`python OUTCARToGULP_ModeMap.py OUTCAR-* -o "SrO-ModeMap-Threshold.gulp" -n "q = (0, 0, 0), v = 6" --mode_map_csv="ModeMap_PostProcess.csv" --gradient_threshold=5.0 --stress_threshold=10.0`
+`python OUTCARToGULP_ModeMap.py OUTCAR-* -o "SrO-ModeMap-Commands.gulp" -n "q = (0, 0, 0), v = 6" --mode_map_csv="ModeMap_PostProcess.csv" --add_commands`
+
+The script also accepts the `--gradient_threshold` and `--stress_threshold` command-line arguments, which can be used to exclude structures with smaller gradients/stresses if desired:
+
+`python OUTCARToGULP_ModeMap.py OUTCAR-* -o "SrO-ModeMap-Threshold.gulp" -n "q = (0, 0, 0), v = 6" --mode_map_csv="ModeMap_PostProcess.csv" --add_commands --gradient_threshold=1.0 --stress_threshold=1.0`
 
 The output `SrO-ModeMap-Threshold.gulp` now contains data sets for a subset of 32 of the 41 structures, with the others replaced by comments indicating why they were omitted:
 

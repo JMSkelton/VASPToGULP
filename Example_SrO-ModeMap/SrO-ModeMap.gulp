@@ -16,6 +16,8 @@ space
 1
 
 observables
+    energy eV
+        -7.24380318
     strain_derivative eV
         1      -0.31910
         2      -0.31910
@@ -44,6 +46,8 @@ space
 1
 
 observables
+    energy eV
+        -8.23410222
     strain_derivative eV
         1      -0.22334
         2      -0.22334
@@ -72,6 +76,8 @@ space
 1
 
 observables
+    energy eV
+        -9.06229284
     strain_derivative eV
         1      -0.12713
         2      -0.12713
@@ -100,6 +106,8 @@ space
 1
 
 observables
+    energy eV
+        -9.75404932
     strain_derivative eV
         1      -0.03531
         2      -0.03531
@@ -128,6 +136,8 @@ space
 1
 
 observables
+    energy eV
+        -10.32982048
     strain_derivative eV
         1       0.04742
         2       0.04742
@@ -156,6 +166,8 @@ space
 1
 
 observables
+    energy eV
+        -10.80657305
     strain_derivative eV
         1       0.11792
         2       0.11792
@@ -184,6 +196,8 @@ space
 1
 
 observables
+    energy eV
+        -11.19885037
     strain_derivative eV
         1       0.17427
         2       0.17427
@@ -212,6 +226,8 @@ space
 1
 
 observables
+    energy eV
+        -11.51935133
     strain_derivative eV
         1       0.21625
         2       0.21625
@@ -240,6 +256,8 @@ space
 1
 
 observables
+    energy eV
+        -11.77915695
     strain_derivative eV
         1       0.24313
         2       0.24313
@@ -268,6 +286,8 @@ space
 1
 
 observables
+    energy eV
+        -11.98798900
     strain_derivative eV
         1       0.25583
         2       0.25583
@@ -296,6 +316,8 @@ space
 1
 
 observables
+    energy eV
+        -12.15427013
     strain_derivative eV
         1       0.25550
         2       0.25550
@@ -324,6 +346,8 @@ space
 1
 
 observables
+    energy eV
+        -12.28525920
     strain_derivative eV
         1       0.24354
         2       0.24354
@@ -352,6 +376,8 @@ space
 1
 
 observables
+    energy eV
+        -12.38717658
     strain_derivative eV
         1       0.22179
         2       0.22179
@@ -380,6 +406,8 @@ space
 1
 
 observables
+    energy eV
+        -12.46532149
     strain_derivative eV
         1       0.19225
         2       0.19225
@@ -408,6 +436,8 @@ space
 1
 
 observables
+    energy eV
+        -12.52419953
     strain_derivative eV
         1       0.15740
         2       0.15740
@@ -436,6 +466,8 @@ space
 1
 
 observables
+    energy eV
+        -12.56761431
     strain_derivative eV
         1       0.12006
         2       0.12006
@@ -464,6 +496,8 @@ space
 1
 
 observables
+    energy eV
+        -12.59874559
     strain_derivative eV
         1       0.08314
         2       0.08314
@@ -492,6 +526,8 @@ space
 1
 
 observables
+    energy eV
+        -12.62019812
     strain_derivative eV
         1       0.04980
         2       0.04980
@@ -520,6 +556,8 @@ space
 1
 
 observables
+    energy eV
+        -12.63402220
     strain_derivative eV
         1       0.02312
         2       0.02312
@@ -548,6 +586,8 @@ space
 1
 
 observables
+    energy eV
+        -12.64170893
     strain_derivative eV
         1       0.00580
         2       0.00580
@@ -576,6 +616,8 @@ space
 1
 
 observables
+    energy eV
+        -12.64416890
     strain_derivative eV
         1      -0.00022
         2      -0.00022
@@ -601,6 +643,8 @@ space
 1
 
 observables
+    energy eV
+        -12.64170893
     strain_derivative eV
         1       0.00581
         2       0.00581
@@ -629,6 +673,8 @@ space
 1
 
 observables
+    energy eV
+        -12.63402220
     strain_derivative eV
         1       0.02312
         2       0.02312
@@ -657,6 +703,8 @@ space
 1
 
 observables
+    energy eV
+        -12.62019812
     strain_derivative eV
         1       0.04980
         2       0.04980
@@ -685,6 +733,8 @@ space
 1
 
 observables
+    energy eV
+        -12.59874559
     strain_derivative eV
         1       0.08313
         2       0.08313
@@ -713,6 +763,8 @@ space
 1
 
 observables
+    energy eV
+        -12.56761431
     strain_derivative eV
         1       0.12006
         2       0.12006
@@ -741,6 +793,8 @@ space
 1
 
 observables
+    energy eV
+        -12.52419953
     strain_derivative eV
         1       0.15741
         2       0.15741
@@ -769,6 +823,8 @@ space
 1
 
 observables
+    energy eV
+        -12.46532149
     strain_derivative eV
         1       0.19224
         2       0.19224
@@ -797,6 +853,8 @@ space
 1
 
 observables
+    energy eV
+        -12.38717658
     strain_derivative eV
         1       0.22179
         2       0.22179
@@ -825,6 +883,8 @@ space
 1
 
 observables
+    energy eV
+        -12.28525920
     strain_derivative eV
         1       0.24354
         2       0.24354
@@ -853,6 +913,8 @@ space
 1
 
 observables
+    energy eV
+        -12.15427013
     strain_derivative eV
         1       0.25550
         2       0.25550
@@ -881,6 +943,8 @@ space
 1
 
 observables
+    energy eV
+        -11.98798900
     strain_derivative eV
         1       0.25582
         2       0.25582
@@ -909,6 +973,8 @@ space
 1
 
 observables
+    energy eV
+        -11.77915695
     strain_derivative eV
         1       0.24313
         2       0.24313
@@ -937,6 +1003,8 @@ space
 1
 
 observables
+    energy eV
+        -11.51935133
     strain_derivative eV
         1       0.21625
         2       0.21625
@@ -965,6 +1033,8 @@ space
 1
 
 observables
+    energy eV
+        -11.19885037
     strain_derivative eV
         1       0.17427
         2       0.17427
@@ -993,6 +1063,8 @@ space
 1
 
 observables
+    energy eV
+        -10.80657305
     strain_derivative eV
         1       0.11792
         2       0.11792
@@ -1021,6 +1093,8 @@ space
 1
 
 observables
+    energy eV
+        -10.32982048
     strain_derivative eV
         1       0.04743
         2       0.04743
@@ -1049,6 +1123,8 @@ space
 1
 
 observables
+    energy eV
+        -9.75404932
     strain_derivative eV
         1      -0.03530
         2      -0.03530
@@ -1077,6 +1153,8 @@ space
 1
 
 observables
+    energy eV
+        -9.06229284
     strain_derivative eV
         1      -0.12712
         2      -0.12712
@@ -1105,6 +1183,8 @@ space
 1
 
 observables
+    energy eV
+        -8.23410222
     strain_derivative eV
         1      -0.22333
         2      -0.22333
@@ -1133,6 +1213,8 @@ space
 1
 
 observables
+    energy eV
+        -7.24380318
     strain_derivative eV
         1      -0.31910
         2      -0.31910

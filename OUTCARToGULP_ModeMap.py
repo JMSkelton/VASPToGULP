@@ -30,8 +30,7 @@ if __name__ == "__main__":
         OutputName = None,
         ModeMapCSV = None,
 
-        # Default (absolute) thresholds for components of the gradients and stress tensor, used to control which data is included in the output file.
-        # The components of the forces on the atoms and the forces on the cell are output to 5 d.p. in the OUTCAR file, so 1.0e-5 is a "safe" default for both.
+        AddCommands = False,
 
         GradientThreshold = 1.0e-5,
         StressThreshold = 1.0e-5
@@ -65,6 +64,12 @@ if __name__ == "__main__":
         );
 
     parser.add_argument(
+        "--add_commands",
+        action = 'store_true', dest = 'AddCommands',
+        help = "Add some basic commands to the GULP input file (default: no)"
+        );
+
+    parser.add_argument(
         "--gradient_threshold",
         metavar = "<threshold>",
         type = float, dest = 'GradientThreshold',
@@ -82,10 +87,10 @@ if __name__ == "__main__":
 
     # Perform some basic validation.
 
-    if args.GradientThreshold < 0.0:
+    if args.GradientThreshold != None and args.GradientThreshold < 0.0:
         raise Exception("Error: If supplied, the gradient component threshold must be >= 0.");
 
-    if args.StressThreshold < 0.0:
+    if args.StressThreshold != None and args.StressThreshold < 0.0:
         raise Exception("Error: If supplied, the stress-tensor component threshold must be >= 0.");
 
     # Read input files.
@@ -203,24 +208,38 @@ if __name__ == "__main__":
     # We only want to output data blocks for structures where the forces (gradients) and/or stress tensor elements are above the set thresholds.
 
     for i, (_, atomTypesList, structure) in enumerate(inputDataSets):
-        latticeVectors, atomPositions, stressTensor, forceSet = structure;
+        latticeVectors, atomPositions, totalEnergy, stressTensor, forceSet = structure;
+
+        # Decide whether to output the gradients.
 
         outputGradients = False;
 
-        # Check the force set for forces above the threshold.
+        # If no threshold is set, output by default.
 
-        for fx, fy, fz in forceSet:
-            if math.fabs(fx) >= args.GradientThreshold or math.fabs(fy) >= args.GradientThreshold or math.fabs(fz) >= args.GradientThreshold:
-                outputGradients = True;
-                break;
+        if args.GradientThreshold == None:
+            outputGradients = True;
+        else:
+            # If a threshold has been set, check the components of the forces against the threshold.
 
-        # Check the diagonal components of the stress tensor for components above the threshold.
+            for fx, fy, fz in forceSet:
+                if math.fabs(fx) >= args.GradientThreshold or math.fabs(fy) >= args.GradientThreshold or math.fabs(fz) >= args.GradientThreshold:
+                    outputGradients = True;
+                    break;
+
+        # Decide whether to output the stress tensor.
 
         outputStressTensor = False;
 
         if stressTensor != None:
-            sXX, sYY, sZZ, _, _, _ = stressTensor;
-            outputStressTensor = math.fabs(sXX) >= args.StressThreshold or math.fabs(sYY) >= args.StressThreshold or math.fabs(sZZ) >= args.StressThreshold;
+            # Again, if no threshold is set, output by default (if available).
+
+            if args.StressThreshold == None:
+                outputStressTensor = True;
+            else:
+                # If a threshold has been set, check the diagonal components of the stress tensor.
+
+                sXX, sYY, sZZ, _, _, _ = stressTensor;
+                outputStressTensor = math.fabs(sXX) >= args.StressThreshold or math.fabs(sYY) >= args.StressThreshold or math.fabs(sZZ) >= args.StressThreshold;
 
         # Fetch the header comment and output name.
 
@@ -235,7 +254,9 @@ if __name__ == "__main__":
 
                 'LatticeVectors' : latticeVectors,
                 'AtomTypesList' : atomTypesList,
-                'AtomPositions' : atomPositions
+                'AtomPositions' : atomPositions,
+
+                'TotalEnergy' : totalEnergy
                 };
 
             if outputStressTensor:
@@ -278,7 +299,7 @@ if __name__ == "__main__":
 
     print( "Writing data to \"{0}\"...".format(outputFile))
 
-    _WriteGULPInputFile(outputDataSets, outputFile);
+    _WriteGULPInputFile(outputDataSets, outputFile, addCommands = args.AddCommands);
 
     print("");
 

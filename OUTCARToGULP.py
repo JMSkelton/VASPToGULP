@@ -26,6 +26,10 @@ _POMASSRegex = re.compile(r"POMASS =\s*(?P<pomass_value>\d+\.\d+);");
 
 _NIONSRegex = re.compile(r"NIONS =\s*(?P<nions_value>\d+)");
 
+# Regex to read total energies.
+
+_TOTENRegex = re.compile("TOTEN  =\s*(?P<toten_value>-?\d+\.\d+)\s+eV");
+
 # Generic integer regex to capture the numbers of ions of each atom type, printed starting with "ions per type =".
 
 _GenericIntegerRegex = re.compile(r"(?P<value>\d+)");
@@ -154,7 +158,7 @@ def _ReadOUTCARFile(filePath = r"OUTCAR"):
                         break;
 
             if line == "VOLUME and BASIS-vectors are now :":
-                # Block should contain a structure and a set of forces.
+                # Block should contain a structure, a set of forces and a total energy.
 
                 if structures == None:
                     structures = [];
@@ -198,10 +202,26 @@ def _ReadOUTCARFile(filePath = r"OUTCAR"):
                         tuple(float(element) for element in elements[3:6])
                         );
 
+                # Scan forward until the header of the block containing the total energy.
+
+                for line in inputReader:
+                    if line.strip() == "FREE ENERGIE OF THE ION-ELECTRON SYSTEM (eV)":
+                        break;
+
+                # Skip one line.
+
+                next(inputReader);
+
+                # Extract the total energy.
+
+                match = _TOTENRegex.search(next(inputReader));
+
+                totalEnergy = float(match.group('toten_value'));
+
                 # Store the data.
 
                 structures.append(
-                    (latticeVectors, atomPositions, forceSet)
+                    (latticeVectors, atomPositions, totalEnergy, forceSet)
                     );
 
             elif line == "Eigenvectors and eigenvalues of the dynamical matrix":
@@ -285,11 +305,11 @@ def _ReadOUTCARFile(filePath = r"OUTCAR"):
             if len(stressTensors) != len(structures):
                 raise Exception("Error: Number of stress tensors does not match number of structures in input file \"{0}\".".format(filePath));
 
-            for i, (latticeVectors, atomPositions, forceSet) in enumerate(structures):
-                structures[i] = (latticeVectors, atomPositions, stressTensors[i], forceSet);
+            for i, (latticeVectors, atomPositions, totalEnergy, forceSet) in enumerate(structures):
+                structures[i] = (latticeVectors, atomPositions, totalEnergy, stressTensors[i], forceSet);
         else:
-            for i, (latticeVectors, atomPositions, forceSet) in enumerate(structures):
-                structures[i] = (latticeVectors, atomPosition, None, forceSet);
+            for i, (latticeVectors, atomPositions, totalEnergy, forceSet) in enumerate(structures):
+                structures[i] = (latticeVectors, atomPosition, totalEnergy, None, forceSet);
 
         # Generate a chemical formula for the structure.
 
@@ -332,22 +352,81 @@ def _ReadOUTCARFile(filePath = r"OUTCAR"):
 #   -> 'LatticeVectors' : 3 x three-component vectors (required for output).
 #   -> 'AtomTypesList' : a list of atomic symbols (required for output).
 #   -> 'AtomPositions' : a list of three-component vectors (required for output).
+#   -> 'TotalEnergy' : the total energy.
 #   -> 'StressTensor' : the unique elements of a stress tensor (xx, yy, zz, xy, yz, zx; optional).
 #   -> 'ForceSet' : a list of three-component vectors (optional).
 #   -> 'ElasticConstantMatrix' : a 6x6 matrix (optional).
 #   -> 'PhononModes' : a tuple of (frequencies, eigenvectors) (optional).
 
+# Each entry in the list must contain at least the 'HeaderComment' key.
+# If 'Name', 'LatticeVectors', 'AtomTypes', and 'AtomPositions' are present, a minimal structure data block is output; if not, just the header comment is written.
+# If any of the optional 'TotalEnergy', 'StressTensor', 'ForceSet', 'ElasticConstantMatrix' or 'PhononModes' keys are present, these are added to the data block as "observables".
+
 # observablesWeights is an optional dictionary that can specify the weight assigned to a subset of the keys in dataSets.
 # At present, only 'ElasticConstantMatrix' will be used, if present.
 
-# Each entry in the list must contain at least the 'HeaderComment' key.
-# If 'Name', 'LatticeVectors', 'AtomTypes', and 'AtomPositions' are present, a minimal structure data block is output; if not, just the header comment is written.
-# If any of the optional 'StressTensor', 'ForceSet', 'ElasticConstantMatrix' or 'PhononModes' keys are present, these are added to the data block as "observables".
+# addComments is a flag that adds some standard GULP comments to the output file when set.
 
 # This code was refactored into a function to make it easier to arrange the output files in different ways depending on the data captured from the input file.
 
-def _WriteGULPInputFile(dataSets, filePath, observablesWeights = None):
+def _WriteGULPInputFile(dataSets, filePath, observablesWeights = None, addCommands = False):
     with open(filePath, 'w') as outputWriter:
+        # If addComments is set, add a "fit" command to the top of the file.
+
+        if addCommands:
+            # The command options depend on what observables are to be written out.
+
+            hasTotalEnergies, hasForceSets, hasStressTensorsOrElasticConstantMatrix, hasPhononModes = False, False, False, False;
+
+            for dataSet in dataSets:
+                if not hasTotalEnergies and 'TotalEnergy' in dataSet:
+                    hasTotalEnergies = True;
+
+                if not hasForceSets and 'ForceSet' in dataSet:
+                    hasForceSets = True;
+
+                if not hasStressTensorsOrElasticConstantMatrix and ('StressTensor' in dataSet or 'ElasticConstantMatrix' in dataSet):
+                    hasStressTensorsOrElasticConstantMatrix = True;
+
+                if not hasPhononModes and 'PhononModes' in dataSet:
+                    hasPhononModes = True;
+
+                if hasTotalEnergies and hasForceSets and hasStressTensorsOrElasticConstantMatrix and hasPhononModes:
+                    break;
+
+            # Build a list of fit options.
+
+            fitKeywords = [];
+
+            if hasForceSets or hasPhononModes:
+                if hasStressTensorsOrElasticConstantMatrix:
+                    fitKeywords.append('conp');
+                else:
+                    fitKeywords.append('conv');
+
+                fitKeywords = fitKeywords + ['comp', 'prop'];
+
+                if hasPhononModes:
+                    fitKeywords = fitKeywords + ['phonon', 'eigenvectors'];
+
+            if len(fitKeywords) == 0 and hasTotalEnergies:
+                fitKeywords = ['fit', 'single', 'comp', 'prop'];
+
+            # If there is something to fit, fitKeywords will not be empty -> write out the command.
+
+            if len(fitKeywords) > 0:
+                outputWriter.write(
+                    "fit {0}\n".format(" ".join(fitKeywords))
+                    );
+
+                outputWriter.write("\n\n");
+            else:
+                # If not, reset addCommands and print a warning.
+
+                print("WARNING: _WriteGULPInputFile(): addCommands was set but no observables were found in any of the items in dataSets.");
+
+                addCommands = False;
+
         # To help format the output file, keep track of whether or not we are writing out the first data set, and whether the previous data set was a data block (or just a header comment in its place).
 
         firstDataSet, previousIsDataBlock = True, False;
@@ -409,6 +488,12 @@ def _WriteGULPInputFile(dataSets, filePath, observablesWeights = None):
                     outputWriter.write("\n");
 
                     outputWriter.write("observables\n");
+
+                    # If available, output the total energy.
+
+                    if 'TotalEnergy' in dataSet:
+                        outputWriter.write("    energy eV\n");
+                        outputWriter.write("        {0:.8f}\n".format(dataSet['TotalEnergy']));
 
                     # If available, output the diagonal components of the stress tensor.
 
@@ -501,23 +586,36 @@ def _WriteGULPInputFile(dataSets, filePath, observablesWeights = None):
 
             previousIsDataBlock = isDataBlock;
 
+        # If addCommands is set, add some output commands to the end of the file.
+
+        if addCommands:
+            # Add two additional blank lines to terminate the previous section.
+
+            outputWriter.write("\n\n");
+
+            # Add output commands.
+
+            outputWriter.write("output thb fit.thb\n");
+            outputWriter.write("output cif fit.cif\n");
+            outputWriter.write("dump fit.grs\n");
+
 
 # Main.
 
 if __name__ == "__main__":
     # Collect and parse command-line arguments.
 
-    parser = ArgumentParser(description = "Extract fitting data for GULP from a VASP OUTCAR file");
+    parser = ArgumentParser(description = "Extract fitting data for GULP from a VASP OUTCAR file and prepare a basic GULP input file");
 
     parser.set_defaults(
         InputFile = "OUTCAR",
         OutputFile = None,
 
-        # Default (absolute) thresholds for components of the gradients and stress tensor, used to control which data is included in the output file.
-        # The components of the forces on the atoms and the forces on the cell are output to 5 d.p. in the OUTCAR file, so 1.0e-5 is a "safe" default for both.
+        FirstStructure = False,
+        AddCommands = False,
 
-        GradientThreshold = 1.0e-5,
-        StressThreshold = 1.0e-5,
+        GradientThreshold = None,
+        StressThreshold = None,
 
         ElasticConstantsWeight = None
         );
@@ -537,34 +635,46 @@ if __name__ == "__main__":
         );
 
     parser.add_argument(
+        "--first_structure",
+        action = 'store_true', dest = 'FirstStructure',
+        help = "For OUTCAR files containing data for multiple structures, output data only for the first one (default: no)"
+        );
+
+    parser.add_argument(
+        "--add_commands",
+        action = 'store_true', dest = 'AddCommands',
+        help = "Add some basic commands to the GULP input file (default: no)"
+        );
+
+    parser.add_argument(
         "--gradient_threshold",
         metavar = "<threshold>",
         type = float, dest = 'GradientThreshold',
-        help = "Threshold for the output of forces (gradients); sets of gradients where all components have absolute values less than this will not be output (default: 1.0e-5)"
+        help = "Threshold for the output of forces (gradients); sets of gradients where all components have absolute values less than this will not be output (default: no threshold)"
         );
 
     parser.add_argument(
         "--stress_threshold",
         metavar = "<threshold>",
         type = float, dest = 'StressThreshold',
-        help = "Threshold for the output of stress tensor components (strain derivatives); stress tensors where all components have absolute values less than this will not be output (default: 1.0e-5)"
+        help = "Threshold for the output of stress tensor components (strain derivatives); stress tensors where all components have absolute values less than this will not be output (default: no threshold)"
         );
 
     parser.add_argument(
         "--elastic_constants_weight",
         metavar = "<weight>",
         type = float, dest = 'ElasticConstantsWeight',
-        help = "Fitting weight added to elastic constants observables in the output file (if written)"
+        help = "Fitting weight added to elastic constants observables in the output file (if written; default: no weight)"
         );
 
     args = parser.parse_args();
 
     # Perform some basic validation.
 
-    if args.GradientThreshold < 0.0:
+    if args.GradientThreshold != None and args.GradientThreshold < 0.0:
         raise Exception("Error: If supplied, the gradient component threshold must be >= 0.");
 
-    if args.StressThreshold < 0.0:
+    if args.StressThreshold != None and args.StressThreshold < 0.0:
         raise Exception("Error: If supplied, the stress-tensor component threshold must be >= 0.");
 
     if args.ElasticConstantsWeight != None and args.ElasticConstantsWeight < 0.0:
@@ -584,7 +694,7 @@ if __name__ == "__main__":
     print("  -> Formula: {0}".format(formula));
     print("  -> # structures: {0}".format(len(structures)));
 
-    _, _, stressTensor, _ = structures[0];
+    _, _, _, stressTensor, _ = structures[0];
 
     print("  -> Stress tensors? {0}".format("Yes" if stressTensor != None else "No"));
 
@@ -598,116 +708,103 @@ if __name__ == "__main__":
 
     dataSets = [];
 
-    # If an elastic-constant matrix and/or a set of phonon frequencies and eigenvectors is avilable, output these to one data set.
+    # If the --first_structure command-line argument was set, discard any additional structures read from the input file.
 
-    if elasticConstantMatrix != None or phononModes != None:
-        # If this data is available, we assume the first structure is the one it was computed for.
+    if args.FirstStructure:
+        structures = structures[:1];
 
-        latticeVectors, atomPositions, _, _ = structures[0];
-
-        dataSet = {
-            'HeaderComment' : "Calculated observables for {0}".format(formula),
-
-            # Use the generated chemical formula as the name.
-
-            'Name' : formula,
-
-            'LatticeVectors' : latticeVectors,
-            'AtomTypesList' : atomTypesList,
-            'AtomPositions' : atomPositions
-            };
-
-        if elasticConstantMatrix != None:
-            dataSet['ElasticConstantMatrix'] = elasticConstantMatrix;
-
-        if phononModes != None:
-            dataSet['PhononModes'] = phononModes;
-
-        dataSets.append(dataSet);
-
-    if len(structures) == 1 and (elasticConstantMatrix == None and phononModes == None):
-        # If we have only one structure, and no elastic-constant matrix or phonon modes, make sure we at least output the structure.
-
-        latticeVectors, atomPositions, stressTensor, forceSet = structures[0];
-
-        dataSet = {
-            'HeaderComment' : formula,
-
-            'Name' : formula,
-
-            'LatticeVectors' : latticeVectors,
-            'AtomTypesList' : atomTypesList,
-            'AtomPositions' : atomPositions
-            };
-
-        # Only output the stress-tensor components and/or gradients if they are above the set thresholds.
-
-        if stressTensor != None:
-            sXX, sYY, sZZ, _, _, _ = stressTensor;
-
-            if math.fabs(sXX) >= args.StressThreshold or math.fabs(sYY) >= args.StressThreshold or math.fabs(sZZ) >= args.StressThreshold:
-                dataSet['StressTensor'] = stressTensor;
+    for i, (latticeVectors, atomPositions, totalEnergy, stressTensor, forceSet) in enumerate(structures):
+        # Work out whether to output the gradients.
 
         outputGradients = False;
 
-        for fx, fy, fz in forceSet:
-            if math.fabs(fx) >= args.GradientThreshold or math.fabs(fy) >= args.GradientThreshold or math.fabs(fz) >= args.GradientThreshold:
-                outputGradients = True;
-                break;
+        # If no threshold is set, the gradients are always output.
 
-        if outputGradients:
-            dataSet['ForceSet'] = forceSet;
-
-        dataSets.append(dataSet);
-    else:
-        # If there are multiple structures, only output data sets for structures where one or more gradients and/or stress-tensor components are above the set thresholds.
-
-        for i, (latticeVectors, atomPositions, stressTensor, forceSet) in enumerate(structures):
-            outputGradients = False;
-
-            # Check the force set for forces above the threshold.
+        if args.GradientThreshold == None:
+            outputGradients = True;
+        else:
+            # If a threshold has been set, the gradients are output if the absolute value of any component of any of the set is larger than the threshold.
 
             for fx, fy, fz in forceSet:
                 if math.fabs(fx) >= args.GradientThreshold or math.fabs(fy) >= args.GradientThreshold or math.fabs(fz) >= args.GradientThreshold:
                     outputGradients = True;
                     break;
 
-            # Check the diagonal components of the stress tensor for components above the threshold.
+        # Work out whether to output the stress tensor.
 
-            outputStressTensor = False;
+        outputStressTensor = False;
 
-            if stressTensor != None:
+        if stressTensor != None:
+            # As for gradients, if no threshold is set, the diagonal components of the stress tensor are always output.
+
+            if args.StressThreshold == None:
+                outputStressTensor = True;
+            else:
+                # If a threshold has been set, the diagonal components of the stress tensor are output when any are above the threshold.
+
                 sXX, sYY, sZZ, _, _, _ = stressTensor;
                 outputStressTensor = math.fabs(sXX) >= args.StressThreshold or math.fabs(sYY) >= args.StressThreshold or math.fabs(sZZ) >= args.StressThreshold;
 
-            # Output the structure if required.
+        # Determine whether to output the structure.
 
-            if outputGradients or outputStressTensor:
-                dataSet = {
-                    'HeaderComment' : "Calculated gradients/strain derivatives for Structure {0}".format(i + 1),
+        # If we are outputting the gradients or stress tensor, output the structure.
 
-                    # Use the chemical formula and structure number to generate the name.
+        outputStructure = outputGradients or outputStressTensor;
 
-                    'Name' : "{0} (Structure {1})".format(formula, i + 1),
+        # If we have elastic constants and/or phonon frequencies/eigenvectors, we assume these properties were calculated for the first structure -> make sure it gets output.
 
-                    'LatticeVectors' : latticeVectors,
-                    'AtomTypesList' : atomTypesList,
-                    'AtomPositions' : atomPositions
-                    };
+        outputStructure = outputStructure or (i == 0 and (phononModes != None or elasticConstantMatrix != None));
 
-                if outputStressTensor:
-                    dataSet['StressTensor'] = stressTensor;
+        # If this is the only structure read from the file, make sure it gets output.
 
-                if outputGradients:
-                    dataSet['ForceSet'] = forceSet;
+        outputStructure = outputStructure or len(structures) == 1;
 
-                dataSets.append(dataSet);
+        if outputStructure:
+            # Devise a header comment and a name.
+
+            name, headerComment = None, None;
+
+            if i == 0 and (phononModes != None or elasticConstantMatrix != None):
+                name = formula;
+                headerComment = "Calculated observables for {0}".format(formula);
+            elif i == 0 and len(structures) == 1:
+                name = formula;
+                headerComment = formula;
             else:
-                # If the gradients and diagonal stress-tensor elements are below the threshold, output a comment to note why the data set was excluded.
+                name = "{0} (Structure {1})".format(formula, i + 1);
+                headerComment = "Calculated energy, gradients and strain derivatives for {0}".format(name);
 
-                dataSets.append(
-                    { 'HeaderComment' : "INFO: The gradient components and diagonal stress-tensor elements for structure {0} are below the set thresholds (gradients: {1:.2e}, stress: {2:.2e}) -> data set not output.".format(i + 1, args.GradientThreshold, args.StressThreshold) }
-                    );
+            dataSet = {
+                'HeaderComment' : headerComment,
+                'Name' : name,
+
+                'LatticeVectors' : latticeVectors,
+                'AtomTypesList' : atomTypesList,
+                'AtomPositions' : atomPositions,
+
+                'TotalEnergy' : totalEnergy
+                };
+
+            if outputStressTensor:
+                dataSet['StressTensor'] = stressTensor;
+
+            if outputGradients:
+                dataSet['ForceSet'] = forceSet;
+
+            if i == 0:
+                if elasticConstantMatrix != None:
+                    dataSet['ElasticConstantMatrix'] = elasticConstantMatrix;
+
+                if phononModes != None:
+                    dataSet['PhononModes'] = phononModes;
+
+            dataSets.append(dataSet);
+        else:
+            # If the gradients and diagonal stress-tensor elements are below the threshold, output a comment to note why the data set was excluded.
+
+            dataSets.append(
+                { 'HeaderComment' : "INFO: The gradient components and diagonal stress-tensor elements for structure {0} are below the set thresholds (gradients: {1:.2e}, stress: {2:.2e}) -> data set not output.".format(i + 1, args.GradientThreshold, args.StressThreshold) }
+                );
 
     # Work out a name for the output file.
 
@@ -744,7 +841,7 @@ if __name__ == "__main__":
 
     print("Writing data to \"{0}\"...".format(outputFile));
 
-    _WriteGULPInputFile(dataSets, outputFile, observablesWeights = observablesWeights);
+    _WriteGULPInputFile(dataSets, outputFile, observablesWeights = observablesWeights, addCommands = args.AddCommands);
 
     print("");
 
