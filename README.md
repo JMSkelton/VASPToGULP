@@ -25,8 +25,10 @@ Several optional command-line arguments allow the output to be customised - type
 
 An auxiliary script for processing the VASP `OUTCAR` files generated from a sequence of single-point calculations for mapping a phonon-mode potential-energy surface using the [ModeMap](https://github.com/JMSkelton/ModeMap) tool.
 
+It can also be used to process similar calculations where multiple single-point calculations need to be performed (e.g. harmonic phonon calculations with the [Phonopy code](https://atztogo.github.io/phonopy)).
+
 The script extracts the total energies, forces (gradients) and stress tensors (strain derivatives) from each structure and collects them into a single GULP-friendly output file.
 
 It also accepts some of the same command-line arguments as `OUTCARToGULP.py`, which can be used to customise the output.
 
-The usage of this script is illustrated by the [ModeMap example](./Example_SrO-ModeMap).
+The usage of this script is illustrated by the [ModeMap](./Example_SrO-ModeMap) and [Phonopy](./Example_SrO-Phonopy) examples.

@@ -51,7 +51,7 @@ The `ModeMap_Polyfit.py` script can then be used to inspect the potential-energy
 
 This should generate a plot (`ModeMap_PolyFit.png`) similar to the following:
 
-<img src="./ModeMap_PolyFit.png" width="500" alt="ModeMap_PolyFit.png" >
+<img src="./ModeMap_PolyFit.png" width="500" alt="ModeMap_PolyFit.png" />
 
 The potential-energy surface dominated by a quartic term at large displacements (try fitting with `--degree=2` to confirm that a quadratic term is insufficient).
 The largest displacements (<i>Q</i> = &plusmn;5 amu<sup>1/2</sup> &#8491;) produce an increase of ~5.5 eV in the total energy, which should result in some large restoring forces on the atoms, and large stresses on the cell.

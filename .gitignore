@@ -1,5 +1,7 @@
 # Development files
 *.pyc
+Dev
+Dev/*
 
 # Windows image file caches
 Thumbs.db
