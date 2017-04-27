@@ -23,9 +23,9 @@ Next, take the `vasprun.xml` file from the SrO finite-differences calculation an
 
 We can now use `ModeMap.py` to generate a sequence of structures displaced along one of the three &Gamma;-point optic modes:
 
-`python ModeMap.py -c POSCAR.vasp --dim="1 1 1" --readfc --mode="0 0 0 6" --q_range="-5 5 0.25" --supercell="1 1 1"`
+`python ModeMap.py -c POSCAR.vasp --dim="1 1 1" --readfc --mode="0 0 0 6" --q_range="-3.5 3.5 0.25" --supercell="1 1 1"`
 
-This generates a sequence of 41 displaced structures with normal-mode amplitudes ranging from <i>Q</i> = -5 amu<sup>1/2</sup> &#8491; to <i>Q</i> = 5 amu<sup>1/2</sup> &#8491;.
+This generates a sequence of 29 displaced structures with normal-mode amplitudes ranging from <i>Q</i> = -3.5 amu<sup>1/2</sup> &#8491; to <i>Q</i> = 3.5 amu<sup>1/2</sup> &#8491;.
 The displaced structures are stored in `ModeMap.tar.gz`, and information about the displacemed structures is written to `ModeMap.csv`.
 
 Running the single-point calculations
@@ -47,14 +47,14 @@ First, run the ModeMap post-processing script to assign the total energies to no
 
 The `ModeMap_Polyfit.py` script can then be used to inspect the potential-energy surface map along the mode:
 
-`python ModeMap_PolyFit.py --degree=4 --plot_y="0 6000"`
+`python ModeMap_PolyFit.py --degree=4 --plot_y="0 5500"`
 
 This should generate a plot (`ModeMap_PolyFit.png`) similar to the following:
 
 <img src="./ModeMap_PolyFit.png" width="500" alt="ModeMap_PolyFit.png" />
 
 The potential-energy surface dominated by a quartic term at large displacements (try fitting with `--degree=2` to confirm that a quadratic term is insufficient).
-The largest displacements (<i>Q</i> = &plusmn;5 amu<sup>1/2</sup> &#8491;) produce an increase of ~5.5 eV in the total energy, which should result in some large restoring forces on the atoms, and large stresses on the cell.
+The largest displacements (<i>Q</i> = &plusmn;3.5 amu<sup>1/2</sup> &#8491;) produce an increase of ~5.2 eV in the total energy, which should result in some large restoring forces on the atoms, and large stresses on the cell.
 
 Preparing a GULP input file
 ---------------------------
@@ -68,7 +68,7 @@ This will produce an output file named `SrO-ModeMap.gulp` with a block of data f
 By providing an identifier (via the `-n` argument) and the path to the `ModeMap_PostProcess.csv` file generated in the previous step (`--mode_map_csv`), each data block is prefixed with a header that records what the structure corresponds to:
 
 ```
-# Data for mode map q = (0, 0, 0), v = 6 w/ Q = -4.75 amu^1/2 A, dU(Q) = 4410 meV
+# Data for mode map q = (0, 0, 0), v = 6 w/ Q = -3.50 amu^1/2 A, dU(Q) = 5187 meV
 # ===============================================================================
 ```
 
@@ -82,4 +82,4 @@ The script also accepts the `--gradient_threshold` and `--stress_threshold` comm
 
 The output `SrO-ModeMap-Threshold.gulp` now contains data sets for a subset of 32 of the 41 structures, with the others replaced by comments indicating why they were omitted:
 
-`# INFO: The gradient components and diagonal stress-tensor elements for "SrO (Input File 21 w/ Q = 0.00)" (OUTCAR-021) are below the set thresholds (gradients: 1.00e+00, stress: 1.00e+00) -> data set not output.`
+`# INFO: The gradient components and diagonal stress-tensor elements for "SrO (Input File 12 w/ Q = -0.75)" (012/OUTCAR) are below the set thresholds (gradients: 1.00e+00, stress: 1.00e+00) -> data set not output.`
