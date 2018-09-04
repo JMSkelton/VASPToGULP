@@ -236,10 +236,10 @@ if __name__ == "__main__":
             if args.StressThreshold == None:
                 outputStressTensor = True;
             else:
-                # If a threshold has been set, check the diagonal components of the stress tensor.
+                # If a threshold has been set, the stress tensor components are output when any are above the threshold.
 
-                sXX, sYY, sZZ, _, _, _ = stressTensor;
-                outputStressTensor = math.fabs(sXX) >= args.StressThreshold or math.fabs(sYY) >= args.StressThreshold or math.fabs(sZZ) >= args.StressThreshold;
+                for element in stressTensor:
+                    outputStressTensor = outputStressTensor or math.fabs(element) / 10.0 >= args.StressThreshold;
 
         # Fetch the header comment and output name.
 
@@ -270,7 +270,7 @@ if __name__ == "__main__":
             # If the gradients and diagonal stress-tensor elements are below the threshold, output a comment to note why the data set was excluded.
 
             outputDataSets.append(
-                { 'HeaderComment' : "INFO: The gradient components and diagonal stress-tensor elements for \"{0}\" ({1}) are below the set thresholds (gradients: {2:.2e}, stress: {3:.2e}) -> data set not output.".format(name, args.InputFiles[i], args.GradientThreshold, args.StressThreshold) }
+                { 'HeaderComment' : "INFO: The gradient and/or stress-tensor components for \"{0}\" ({1}) are below the set thresholds (gradients: {2:.2e}, stress: {3:.2e}) -> data set not output.".format(name, args.InputFiles[i], args.GradientThreshold, args.StressThreshold) }
                 );
 
     # Work out a name for the output file.

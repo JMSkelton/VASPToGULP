@@ -62,8 +62,8 @@ observables
 end
 
 
-# Calculated energy, gradients and strain derivatives for SrO (Structure 2)
-# =========================================================================
+# Calculated energy, gradients and stresses for SrO (Structure 2)
+# ===============================================================
 
 name SrO (Structure 2)
 
@@ -82,15 +82,18 @@ space
 observables
     energy eV
         -12.63696142
-    strain_derivative eV
-        1       0.70380
-        2       0.19857
-        3       0.19857
+    stress
+        1       3.26738
+        2       0.92186
+        3       0.92186
+        4      -0.00000
+        5      -0.00000
+        6      -0.00000
 end
 
 
-# Calculated energy, gradients and strain derivatives for SrO (Structure 3)
-# =========================================================================
+# Calculated energy, gradients and stresses for SrO (Structure 3)
+# ===============================================================
 
 name SrO (Structure 3)
 
@@ -109,15 +112,18 @@ space
 observables
     energy eV
         -12.64228882
-    strain_derivative eV
-        1       0.37159
-        2       0.10045
-        3       0.10045
+    stress
+        1       1.74218
+        2       0.47093
+        3       0.47093
+        4      -0.00000
+        5       0.00000
+        6      -0.00000
 end
 
 
-# Calculated energy, gradients and strain derivatives for SrO (Structure 4)
-# =========================================================================
+# Calculated energy, gradients and stresses for SrO (Structure 4)
+# ===============================================================
 
 name SrO (Structure 4)
 
@@ -136,15 +142,18 @@ space
 observables
     energy eV
         -12.64211514
-    strain_derivative eV
-        1      -0.41574
-        2      -0.10363
-        3      -0.10363
+    stress
+        1      -1.98853
+        2      -0.49567
+        3      -0.49567
+        4      -0.00000
+        5       0.00000
+        6       0.00000
 end
 
 
-# Calculated energy, gradients and strain derivatives for SrO (Structure 5)
-# =========================================================================
+# Calculated energy, gradients and stresses for SrO (Structure 5)
+# ===============================================================
 
 name SrO (Structure 5)
 
@@ -163,15 +172,18 @@ space
 observables
     energy eV
         -12.63558702
-    strain_derivative eV
-        1      -0.87894
-        2      -0.20950
-        3      -0.20950
+    stress
+        1      -4.24701
+        2      -1.01227
+        3      -1.01227
+        4      -0.00000
+        5      -0.00000
+        6      -0.00000
 end
 
 
-# Calculated energy, gradients and strain derivatives for SrO (Structure 6)
-# =========================================================================
+# Calculated energy, gradients and stresses for SrO (Structure 6)
+# ===============================================================
 
 name SrO (Structure 6)
 
@@ -190,15 +202,18 @@ space
 observables
     energy eV
         -12.63696144
-    strain_derivative eV
-        1       0.19856
-        2       0.70379
-        3       0.19856
+    stress
+        1       0.92182
+        2       3.26734
+        3       0.92182
+        4      -0.00000
+        5      -0.00000
+        6      -0.00000
 end
 
 
-# Calculated energy, gradients and strain derivatives for SrO (Structure 7)
-# =========================================================================
+# Calculated energy, gradients and stresses for SrO (Structure 7)
+# ===============================================================
 
 name SrO (Structure 7)
 
@@ -217,15 +232,18 @@ space
 observables
     energy eV
         -12.64228881
-    strain_derivative eV
-        1       0.10045
-        2       0.37160
-        3       0.10045
+    stress
+        1       0.47097
+        2       1.74221
+        3       0.47097
+        4       0.00000
+        5      -0.00000
+        6       0.00000
 end
 
 
-# Calculated energy, gradients and strain derivatives for SrO (Structure 8)
-# =========================================================================
+# Calculated energy, gradients and stresses for SrO (Structure 8)
+# ===============================================================
 
 name SrO (Structure 8)
 
@@ -244,15 +262,18 @@ space
 observables
     energy eV
         -12.64211514
-    strain_derivative eV
-        1      -0.10362
-        2      -0.41573
-        3      -0.10362
+    stress
+        1      -0.49562
+        2      -1.98848
+        3      -0.49562
+        4      -0.00000
+        5      -0.00000
+        6      -0.00000
 end
 
 
-# Calculated energy, gradients and strain derivatives for SrO (Structure 9)
-# =========================================================================
+# Calculated energy, gradients and stresses for SrO (Structure 9)
+# ===============================================================
 
 name SrO (Structure 9)
 
@@ -271,15 +292,18 @@ space
 observables
     energy eV
         -12.63558703
-    strain_derivative eV
-        1      -0.20947
-        2      -0.87891
-        3      -0.20947
+    stress
+        1      -1.01216
+        2      -4.24686
+        3      -1.01216
+        4       0.00000
+        5      -0.00000
+        6       0.00000
 end
 
 
-# Calculated energy, gradients and strain derivatives for SrO (Structure 10)
-# ==========================================================================
+# Calculated energy, gradients and stresses for SrO (Structure 10)
+# ================================================================
 
 name SrO (Structure 10)
 
@@ -298,15 +322,18 @@ space
 observables
     energy eV
         -12.63696142
-    strain_derivative eV
-        1       0.19857
-        2       0.19857
-        3       0.70380
+    stress
+        1       0.92184
+        2       0.92184
+        3       3.26735
+        4       0.00000
+        5       0.00000
+        6      -0.00000
 end
 
 
-# Calculated energy, gradients and strain derivatives for SrO (Structure 11)
-# ==========================================================================
+# Calculated energy, gradients and stresses for SrO (Structure 11)
+# ================================================================
 
 name SrO (Structure 11)
 
@@ -325,15 +352,18 @@ space
 observables
     energy eV
         -12.64228881
-    strain_derivative eV
-        1       0.10046
-        2       0.10046
-        3       0.37160
+    stress
+        1       0.47099
+        2       0.47099
+        3       1.74221
+        4       0.00000
+        5       0.00000
+        6      -0.00000
 end
 
 
-# Calculated energy, gradients and strain derivatives for SrO (Structure 12)
-# ==========================================================================
+# Calculated energy, gradients and stresses for SrO (Structure 12)
+# ================================================================
 
 name SrO (Structure 12)
 
@@ -352,15 +382,18 @@ space
 observables
     energy eV
         -12.64211514
-    strain_derivative eV
-        1      -0.10361
-        2      -0.10361
-        3      -0.41572
+    stress
+        1      -0.49560
+        2      -0.49560
+        3      -1.98847
+        4       0.00000
+        5      -0.00000
+        6      -0.00000
 end
 
 
-# Calculated energy, gradients and strain derivatives for SrO (Structure 13)
-# ==========================================================================
+# Calculated energy, gradients and stresses for SrO (Structure 13)
+# ================================================================
 
 name SrO (Structure 13)
 
@@ -379,29 +412,210 @@ space
 observables
     energy eV
         -12.63558703
-    strain_derivative eV
-        1      -0.20949
-        2      -0.20949
-        3      -0.87892
+    stress
+        1      -1.01223
+        2      -1.01223
+        3      -4.24692
+        4       0.00000
+        5      -0.00000
+        6      -0.00000
 end
 
 
-# INFO: The gradient components and diagonal stress-tensor elements for structure 14 are below the set thresholds (gradients: 2.50e-02, stress: 1.00e-01) -> data set not output.
-# INFO: The gradient components and diagonal stress-tensor elements for structure 15 are below the set thresholds (gradients: 2.50e-02, stress: 1.00e-01) -> data set not output.
-# INFO: The gradient components and diagonal stress-tensor elements for structure 16 are below the set thresholds (gradients: 2.50e-02, stress: 1.00e-01) -> data set not output.
-# INFO: The gradient components and diagonal stress-tensor elements for structure 17 are below the set thresholds (gradients: 2.50e-02, stress: 1.00e-01) -> data set not output.
-# INFO: The gradient components and diagonal stress-tensor elements for structure 18 are below the set thresholds (gradients: 2.50e-02, stress: 1.00e-01) -> data set not output.
-# INFO: The gradient components and diagonal stress-tensor elements for structure 19 are below the set thresholds (gradients: 2.50e-02, stress: 1.00e-01) -> data set not output.
-# INFO: The gradient components and diagonal stress-tensor elements for structure 20 are below the set thresholds (gradients: 2.50e-02, stress: 1.00e-01) -> data set not output.
-# INFO: The gradient components and diagonal stress-tensor elements for structure 21 are below the set thresholds (gradients: 2.50e-02, stress: 1.00e-01) -> data set not output.
-# INFO: The gradient components and diagonal stress-tensor elements for structure 22 are below the set thresholds (gradients: 2.50e-02, stress: 1.00e-01) -> data set not output.
-# INFO: The gradient components and diagonal stress-tensor elements for structure 23 are below the set thresholds (gradients: 2.50e-02, stress: 1.00e-01) -> data set not output.
-# INFO: The gradient components and diagonal stress-tensor elements for structure 24 are below the set thresholds (gradients: 2.50e-02, stress: 1.00e-01) -> data set not output.
-# INFO: The gradient components and diagonal stress-tensor elements for structure 25 are below the set thresholds (gradients: 2.50e-02, stress: 1.00e-01) -> data set not output.
+# Calculated energy, gradients and stresses for SrO (Structure 14)
+# ================================================================
+
+name SrO (Structure 14)
+
+vectors Angs
+        0.000000000      2.567104990      2.567104990
+        2.567104990      0.051342100      2.567104990
+        2.567104990      2.618447090      0.000000000
+
+cart
+    Sr   core     0.00000     0.00000     0.00000
+    O    core     2.56710     2.61845     2.56710
+
+space
+1
+
+observables
+    energy eV
+        -12.64184169
+    stress
+        1      -0.00253
+        2       0.01417
+        3       0.02558
+        4      -0.00000
+        5      -0.00000
+        6       1.10420
+end
 
 
-# Calculated energy, gradients and strain derivatives for SrO (Structure 26)
-# ==========================================================================
+# INFO: The gradient and/or stress-tensor components for structure 15 are below the set thresholds (gradients: 2.50e-02, stress: 1.00e+00) -> data set not output.
+# INFO: The gradient and/or stress-tensor components for structure 16 are below the set thresholds (gradients: 2.50e-02, stress: 1.00e+00) -> data set not output.
+
+
+# Calculated energy, gradients and stresses for SrO (Structure 17)
+# ================================================================
+
+name SrO (Structure 17)
+
+vectors Angs
+        0.000000000      2.567104990      2.567104990
+        2.567104990     -0.051342100      2.567104990
+        2.567104990      2.515762890      0.000000000
+
+cart
+    Sr   core     0.00000     0.00000     0.00000
+    O    core     2.56710     2.51576     2.56710
+
+space
+1
+
+observables
+    energy eV
+        -12.64184170
+    stress
+        1      -0.00256
+        2       0.01415
+        3       0.02556
+        4      -0.00000
+        5      -0.00000
+        6      -1.10418
+end
+
+
+# Calculated energy, gradients and stresses for SrO (Structure 18)
+# ================================================================
+
+name SrO (Structure 18)
+
+vectors Angs
+        0.000000000      2.567104990      2.618447090
+        2.567104990      0.000000000      2.567104990
+        2.567104990      2.567104990      0.051342100
+
+cart
+    Sr   core     0.00000     0.00000     0.00000
+    O    core     2.56710     2.56710     2.61845
+
+space
+1
+
+observables
+    energy eV
+        -12.64184168
+    stress
+        1       0.02559
+        2      -0.00253
+        3       0.01418
+        4       1.10423
+        5      -0.00000
+        6      -0.00000
+end
+
+
+# INFO: The gradient and/or stress-tensor components for structure 19 are below the set thresholds (gradients: 2.50e-02, stress: 1.00e+00) -> data set not output.
+# INFO: The gradient and/or stress-tensor components for structure 20 are below the set thresholds (gradients: 2.50e-02, stress: 1.00e+00) -> data set not output.
+
+
+# Calculated energy, gradients and stresses for SrO (Structure 21)
+# ================================================================
+
+name SrO (Structure 21)
+
+vectors Angs
+        0.000000000      2.567104990      2.515762890
+        2.567104990      0.000000000      2.567104990
+        2.567104990      2.567104990     -0.051342100
+
+cart
+    Sr   core     0.00000     0.00000     0.00000
+    O    core     2.56710     2.56710     2.51576
+
+space
+1
+
+observables
+    energy eV
+        -12.64184169
+    stress
+        1       0.02567
+        2      -0.00245
+        3       0.01425
+        4      -1.10417
+        5      -0.00000
+        6      -0.00000
+end
+
+
+# Calculated energy, gradients and stresses for SrO (Structure 22)
+# ================================================================
+
+name SrO (Structure 22)
+
+vectors Angs
+        0.051342100      2.567104990      2.567104990
+        2.618447090      0.000000000      2.567104990
+        2.567104990      2.567104990      0.000000000
+
+cart
+    Sr   core     0.00000     0.00000     0.00000
+    O    core     2.61845     2.56710     2.56710
+
+space
+1
+
+observables
+    energy eV
+        -12.64184169
+    stress
+        1       0.01412
+        2       0.02555
+        3      -0.00258
+        4      -0.00000
+        5       1.10422
+        6      -0.00000
+end
+
+
+# INFO: The gradient and/or stress-tensor components for structure 23 are below the set thresholds (gradients: 2.50e-02, stress: 1.00e+00) -> data set not output.
+# INFO: The gradient and/or stress-tensor components for structure 24 are below the set thresholds (gradients: 2.50e-02, stress: 1.00e+00) -> data set not output.
+
+
+# Calculated energy, gradients and stresses for SrO (Structure 25)
+# ================================================================
+
+name SrO (Structure 25)
+
+vectors Angs
+       -0.051342100      2.567104990      2.567104990
+        2.515762890      0.000000000      2.567104990
+        2.567104990      2.567104990      0.000000000
+
+cart
+    Sr   core     0.00000     0.00000     0.00000
+    O    core     2.51576     2.56710     2.56710
+
+space
+1
+
+observables
+    energy eV
+        -12.64184169
+    stress
+        1       0.01314
+        2       0.02459
+        3      -0.00355
+        4      -0.00000
+        5      -1.10438
+        6      -0.00000
+end
+
+
+# Calculated energy, gradients and stresses for SrO (Structure 26)
+# ================================================================
 
 name SrO (Structure 26)
 
@@ -426,12 +640,12 @@ observables
 end
 
 
-# INFO: The gradient components and diagonal stress-tensor elements for structure 27 are below the set thresholds (gradients: 2.50e-02, stress: 1.00e-01) -> data set not output.
-# INFO: The gradient components and diagonal stress-tensor elements for structure 28 are below the set thresholds (gradients: 2.50e-02, stress: 1.00e-01) -> data set not output.
+# INFO: The gradient and/or stress-tensor components for structure 27 are below the set thresholds (gradients: 2.50e-02, stress: 1.00e+00) -> data set not output.
+# INFO: The gradient and/or stress-tensor components for structure 28 are below the set thresholds (gradients: 2.50e-02, stress: 1.00e+00) -> data set not output.
 
 
-# Calculated energy, gradients and strain derivatives for SrO (Structure 29)
-# ==========================================================================
+# Calculated energy, gradients and stresses for SrO (Structure 29)
+# ================================================================
 
 name SrO (Structure 29)
 
@@ -456,8 +670,8 @@ observables
 end
 
 
-# Calculated energy, gradients and strain derivatives for SrO (Structure 30)
-# ==========================================================================
+# Calculated energy, gradients and stresses for SrO (Structure 30)
+# ================================================================
 
 name SrO (Structure 30)
 
@@ -482,12 +696,12 @@ observables
 end
 
 
-# INFO: The gradient components and diagonal stress-tensor elements for structure 31 are below the set thresholds (gradients: 2.50e-02, stress: 1.00e-01) -> data set not output.
-# INFO: The gradient components and diagonal stress-tensor elements for structure 32 are below the set thresholds (gradients: 2.50e-02, stress: 1.00e-01) -> data set not output.
+# INFO: The gradient and/or stress-tensor components for structure 31 are below the set thresholds (gradients: 2.50e-02, stress: 1.00e+00) -> data set not output.
+# INFO: The gradient and/or stress-tensor components for structure 32 are below the set thresholds (gradients: 2.50e-02, stress: 1.00e+00) -> data set not output.
 
 
-# Calculated energy, gradients and strain derivatives for SrO (Structure 33)
-# ==========================================================================
+# Calculated energy, gradients and stresses for SrO (Structure 33)
+# ================================================================
 
 name SrO (Structure 33)
 

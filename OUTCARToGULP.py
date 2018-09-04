@@ -145,14 +145,20 @@ def _ReadOUTCARFile(filePath = r"OUTCAR"):
                 if stressTensors == None:
                     stressTensors = [];
 
-                # Scan to the line which gives the total force, then store the stress tensor elements and break.
+                # Scan to the line which gives the total then store the stress tensor elements and break.
 
                 for line in inputReader:
                     if line.strip()[:5] == "Total":
+                        # The following line contains the total stress in more convenient kbar units.
+
+                        line = next(inputReader).strip();
+
+                        assert line[:5] == "in kB";
+
                         # VASP outputs the cell forces (= *minus* the stress), but the stress is more intuitive to work with -> we convert it here.
 
                         stressTensors.append(
-                            [-1.0 * float(element) for element in line.strip().split()[1:7]]
+                            [-1.0 * float(element) for element in line.split()[2:8]]
                             );
 
                         break;
@@ -498,10 +504,15 @@ def _WriteGULPInputFile(dataSets, filePath, observablesWeights = None, addComman
                     # If available, output the diagonal components of the stress tensor.
 
                     if 'StressTensor' in dataSet:
-                        outputWriter.write("    strain_derivative eV\n");
+                        outputWriter.write("    stress\n");
 
-                        for j, element in enumerate(dataSet['StressTensor'][:3]):
-                            outputWriter.write("        {0}  {1: >12.5f}\n".format(j + 1, element));
+                        # VASP writes the stress tensor elements in the order xx, yy, zz, xy, yz, zx, whereas GULP indexes them in the order xx, yy, zz, yz, xz, xy.
+                        # The mapping is therefore 0 -> 1, 1 -> 2, 2 -> 3, 4 -> 4, 5 -> 5, 3 -> 6.
+
+                        for i, index in enumerate([0, 1, 2, 4, 5, 3]):
+                            # GULP expects the stress tensor elements in GPa rather than kbar -> divide by 10.
+
+                            outputWriter.write("        {0}  {1: >12.5f}\n".format(i + 1, dataSet['StressTensor'][index] / 10.0));
 
                     # If available, convert the forces to gradients and output.
 
@@ -740,10 +751,10 @@ if __name__ == "__main__":
             if args.StressThreshold == None:
                 outputStressTensor = True;
             else:
-                # If a threshold has been set, the diagonal components of the stress tensor are output when any are above the threshold.
+                # If a threshold has been set, the stress tensor components are output when any are above the threshold.
 
-                sXX, sYY, sZZ, _, _, _ = stressTensor;
-                outputStressTensor = math.fabs(sXX) >= args.StressThreshold or math.fabs(sYY) >= args.StressThreshold or math.fabs(sZZ) >= args.StressThreshold;
+                for element in stressTensor:
+                    outputStressTensor = outputStressTensor or math.fabs(element) / 10.0 >= args.StressThreshold;
 
         # Determine whether to output the structure.
 
@@ -772,7 +783,7 @@ if __name__ == "__main__":
                 headerComment = formula;
             else:
                 name = "{0} (Structure {1})".format(formula, i + 1);
-                headerComment = "Calculated energy, gradients and strain derivatives for {0}".format(name);
+                headerComment = "Calculated energy, gradients and stresses for {0}".format(name);
 
             dataSet = {
                 'HeaderComment' : headerComment,
@@ -800,10 +811,10 @@ if __name__ == "__main__":
 
             dataSets.append(dataSet);
         else:
-            # If the gradients and diagonal stress-tensor elements are below the threshold, output a comment to note why the data set was excluded.
+            # If the gradients and/or stress-tensor elements are below the thresholds, output a comment to note why the data set was excluded.
 
             dataSets.append(
-                { 'HeaderComment' : "INFO: The gradient components and diagonal stress-tensor elements for structure {0} are below the set thresholds (gradients: {1:.2e}, stress: {2:.2e}) -> data set not output.".format(i + 1, args.GradientThreshold, args.StressThreshold) }
+                { 'HeaderComment' : "INFO: The gradient and/or stress-tensor components for structure {0} are below the set thresholds (gradients: {1:.2e}, stress: {2:.2e}) -> data set not output.".format(i + 1, args.GradientThreshold, args.StressThreshold) }
                 );
 
     # Work out a name for the output file.

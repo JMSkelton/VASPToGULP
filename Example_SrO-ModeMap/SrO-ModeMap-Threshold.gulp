@@ -21,10 +21,13 @@ space
 observables
     energy eV
         -7.45735279
-    strain_derivative eV
-        1      -0.30029
-        2      -0.30029
-        3     -35.62160
+    stress
+        1      -1.42197
+        2      -1.42197
+        3    -168.67980
+        4      -0.00000
+        5      -0.00000
+        6      -0.00000
     gradients eV/Angs
         1      -0.00000    -0.00000    21.70883
         2      -0.00000    -0.00000   -21.70883
@@ -51,10 +54,13 @@ space
 observables
     energy eV
         -8.76103801
-    strain_derivative eV
-        1      -0.16382
-        2      -0.16382
-        3     -28.76882
+    stress
+        1      -0.77573
+        2      -0.77573
+        3    -136.22970
+        4      -0.00000
+        5      -0.00000
+        6      -0.00000
     gradients eV/Angs
         1      -0.00000    -0.00000    16.85919
         2      -0.00000    -0.00000   -16.85919
@@ -81,10 +87,13 @@ space
 observables
     energy eV
         -9.77256509
-    strain_derivative eV
-        1      -0.03266
-        2      -0.03266
-        3     -23.08976
+    stress
+        1      -0.15466
+        2      -0.15466
+        3    -109.33751
+        4      -0.00000
+        5      -0.00000
+        6      -0.00000
     gradients eV/Angs
         1      -0.00000    -0.00000    13.05238
         2      -0.00000    -0.00000   -13.05238
@@ -111,10 +120,13 @@ space
 observables
     energy eV
         -10.55264075
-    strain_derivative eV
-        1       0.08059
-        2       0.08059
-        3     -18.30782
+    stress
+        1       0.38161
+        2       0.38161
+        3     -86.69344
+        4       0.00000
+        5      -0.00000
+        6      -0.00000
     gradients eV/Angs
         1      -0.00000    -0.00000    10.01503
         2      -0.00000    -0.00000   -10.01503
@@ -141,10 +153,13 @@ space
 observables
     energy eV
         -11.14774713
-    strain_derivative eV
-        1       0.16744
-        2       0.16744
-        3     -14.28473
+    stress
+        1       0.79288
+        2       0.79288
+        3     -67.64282
+        4      -0.00000
+        5      -0.00000
+        6      -0.00000
     gradients eV/Angs
         1      -0.00000    -0.00000     7.58877
         2      -0.00000    -0.00000    -7.58877
@@ -171,10 +186,13 @@ space
 observables
     energy eV
         -11.59561550
-    strain_derivative eV
-        1       0.22499
-        2       0.22499
-        3     -10.93499
+    stress
+        1       1.06541
+        2       1.06541
+        3     -51.78072
+        4      -0.00000
+        5      -0.00000
+        6      -0.00000
     gradients eV/Angs
         1      -0.00000    -0.00000     5.66628
         2      -0.00000    -0.00000    -5.66628
@@ -201,10 +219,13 @@ space
 observables
     energy eV
         -11.92742995
-    strain_derivative eV
-        1       0.25318
-        2       0.25318
-        3      -8.18437
+    stress
+        1       1.19891
+        2       1.19891
+        3     -38.75566
+        4      -0.00000
+        5      -0.00000
+        6      -0.00000
     gradients eV/Angs
         1      -0.00000    -0.00000     4.16076
         2      -0.00000    -0.00000    -4.16076
@@ -231,10 +252,13 @@ space
 observables
     energy eV
         -12.16891957
-    strain_derivative eV
-        1       0.25470
-        2       0.25470
-        3      -5.95775
+    stress
+        1       1.20609
+        2       1.20609
+        3     -28.21190
+        4       0.00000
+        5      -0.00000
+        6      -0.00000
     gradients eV/Angs
         1      -0.00000    -0.00000     2.99656
         2      -0.00000    -0.00000    -2.99656
@@ -261,10 +285,13 @@ space
 observables
     energy eV
         -12.34099372
-    strain_derivative eV
-        1       0.23336
-        2       0.23336
-        3      -4.18193
+    stress
+        1       1.10504
+        2       1.10504
+        3     -19.80279
+        4      -0.00000
+        5       0.00000
+        6      -0.00000
     gradients eV/Angs
         1      -0.00000    -0.00000     2.10802
         2      -0.00000    -0.00000    -2.10802
@@ -291,10 +318,13 @@ space
 observables
     energy eV
         -12.46045276
-    strain_derivative eV
-        1       0.19459
-        2       0.19459
-        3      -2.79046
+    stress
+        1       0.92146
+        2       0.92146
+        3     -13.21373
+        4       0.00000
+        5      -0.00000
+        6      -0.00000
     gradients eV/Angs
         1      -0.00000    -0.00000     1.43986
         2      -0.00000    -0.00000    -1.43986
@@ -321,20 +351,139 @@ space
 observables
     energy eV
         -12.54066692
-    strain_derivative eV
-        1       0.14476
-        2       0.14476
-        3      -1.72685
+    stress
+        1       0.68548
+        2       0.68548
+        3      -8.17717
+        4      -0.00000
+        5      -0.00000
+        6      -0.00000
 end
 
 
-# INFO: The gradient components and diagonal stress-tensor elements for "SrO (Input File 12 w/ Q = -0.75)" (012/OUTCAR) are below the set thresholds (gradients: 1.00e+00, stress: 1.00e+00) -> data set not output.
-# INFO: The gradient components and diagonal stress-tensor elements for "SrO (Input File 13 w/ Q = -0.50)" (013/OUTCAR) are below the set thresholds (gradients: 1.00e+00, stress: 1.00e+00) -> data set not output.
-# INFO: The gradient components and diagonal stress-tensor elements for "SrO (Input File 14 w/ Q = -0.25)" (014/OUTCAR) are below the set thresholds (gradients: 1.00e+00, stress: 1.00e+00) -> data set not output.
-# INFO: The gradient components and diagonal stress-tensor elements for "SrO (Input File 15 w/ Q = 0.00)" (015/OUTCAR) are below the set thresholds (gradients: 1.00e+00, stress: 1.00e+00) -> data set not output.
-# INFO: The gradient components and diagonal stress-tensor elements for "SrO (Input File 16 w/ Q = 0.25)" (016/OUTCAR) are below the set thresholds (gradients: 1.00e+00, stress: 1.00e+00) -> data set not output.
-# INFO: The gradient components and diagonal stress-tensor elements for "SrO (Input File 17 w/ Q = 0.50)" (017/OUTCAR) are below the set thresholds (gradients: 1.00e+00, stress: 1.00e+00) -> data set not output.
-# INFO: The gradient components and diagonal stress-tensor elements for "SrO (Input File 18 w/ Q = 0.75)" (018/OUTCAR) are below the set thresholds (gradients: 1.00e+00, stress: 1.00e+00) -> data set not output.
+# Data for mode map q = (0, 0, 0), v = 6 w/ Q = -0.75 amu^1/2 A, dU(Q) = 52 meV
+# =============================================================================
+
+name SrO (Input File 12 w/ Q = -0.75)
+
+vectors Angs
+        0.000000000      2.567104990      2.567104990
+        2.567104990      0.000000000      2.567104990
+        2.567104990      2.567104990      0.000000000
+
+cart
+    Sr   core     2.56710     2.56710     0.03149
+    O    core     2.56710     2.56710     2.39469
+
+space
+1
+
+observables
+    energy eV
+        -12.59217100
+    stress
+        1       0.43506
+        2       0.43506
+        3      -4.47769
+        4      -0.00000
+        5      -0.00000
+        6      -0.00000
+end
+
+
+# Data for mode map q = (0, 0, 0), v = 6 w/ Q = -0.50 amu^1/2 A, dU(Q) = 21 meV
+# =============================================================================
+
+name SrO (Input File 13 w/ Q = -0.50)
+
+vectors Angs
+        0.000000000      2.567104990      2.567104990
+        2.567104990      0.000000000      2.567104990
+        2.567104990      2.567104990      0.000000000
+
+cart
+    Sr   core     2.56710     2.56710     0.02099
+    O    core     2.56710     2.56710     2.45216
+
+space
+1
+
+observables
+    energy eV
+        -12.62306353
+    stress
+        1       0.21137
+        2       0.21137
+        3      -1.95149
+        4       0.00000
+        5       0.00000
+        6      -0.00000
+end
+
+
+# INFO: The gradient and/or stress-tensor components for "SrO (Input File 14 w/ Q = -0.25)" (OUTCAR-014) are below the set thresholds (gradients: 1.00e+00, stress: 1.00e+00) -> data set not output.
+# INFO: The gradient and/or stress-tensor components for "SrO (Input File 15 w/ Q = 0.00)" (OUTCAR-015) are below the set thresholds (gradients: 1.00e+00, stress: 1.00e+00) -> data set not output.
+# INFO: The gradient and/or stress-tensor components for "SrO (Input File 16 w/ Q = 0.25)" (OUTCAR-016) are below the set thresholds (gradients: 1.00e+00, stress: 1.00e+00) -> data set not output.
+
+
+# Data for mode map q = (0, 0, 0), v = 6 w/ Q = 0.50 amu^1/2 A, dU(Q) = 21 meV
+# ============================================================================
+
+name SrO (Input File 17 w/ Q = 0.50)
+
+vectors Angs
+        0.000000000      2.567104990      2.567104990
+        2.567104990      0.000000000      2.567104990
+        2.567104990      2.567104990      0.000000000
+
+cart
+    Sr   core     2.56710     2.56710     5.11322
+    O    core     2.56710     2.56710     2.68205
+
+space
+1
+
+observables
+    energy eV
+        -12.62306353
+    stress
+        1       0.21135
+        2       0.21135
+        3      -1.95151
+        4      -0.00000
+        5      -0.00000
+        6      -0.00000
+end
+
+
+# Data for mode map q = (0, 0, 0), v = 6 w/ Q = 0.75 amu^1/2 A, dU(Q) = 52 meV
+# ============================================================================
+
+name SrO (Input File 18 w/ Q = 0.75)
+
+vectors Angs
+        0.000000000      2.567104990      2.567104990
+        2.567104990      0.000000000      2.567104990
+        2.567104990      2.567104990      0.000000000
+
+cart
+    Sr   core     2.56710     2.56710     5.10272
+    O    core     2.56710     2.56710     2.73952
+
+space
+1
+
+observables
+    energy eV
+        -12.59217100
+    stress
+        1       0.43509
+        2       0.43509
+        3      -4.47766
+        4      -0.00000
+        5      -0.00000
+        6      -0.00000
+end
 
 
 # Data for mode map q = (0, 0, 0), v = 6 w/ Q = 1.00 amu^1/2 A, dU(Q) = 104 meV
@@ -357,10 +506,13 @@ space
 observables
     energy eV
         -12.54066692
-    strain_derivative eV
-        1       0.14476
-        2       0.14476
-        3      -1.72685
+    stress
+        1       0.68548
+        2       0.68548
+        3      -8.17717
+        4       0.00000
+        5      -0.00000
+        6      -0.00000
 end
 
 
@@ -384,10 +536,13 @@ space
 observables
     energy eV
         -12.46045276
-    strain_derivative eV
-        1       0.19459
-        2       0.19459
-        3      -2.79046
+    stress
+        1       0.92147
+        2       0.92147
+        3     -13.21372
+        4      -0.00000
+        5      -0.00000
+        6      -0.00000
     gradients eV/Angs
         1      -0.00000    -0.00000    -1.43986
         2      -0.00000    -0.00000     1.43986
@@ -414,10 +569,13 @@ space
 observables
     energy eV
         -12.34099372
-    strain_derivative eV
-        1       0.23335
-        2       0.23335
-        3      -4.18194
+    stress
+        1       1.10500
+        2       1.10500
+        3     -19.80282
+        4      -0.00000
+        5      -0.00000
+        6      -0.00000
     gradients eV/Angs
         1      -0.00000    -0.00000    -2.10802
         2      -0.00000    -0.00000     2.10802
@@ -444,10 +602,13 @@ space
 observables
     energy eV
         -12.16891957
-    strain_derivative eV
-        1       0.25470
-        2       0.25470
-        3      -5.95775
+    stress
+        1       1.20609
+        2       1.20609
+        3     -28.21188
+        4      -0.00000
+        5      -0.00000
+        6      -0.00000
     gradients eV/Angs
         1      -0.00000    -0.00000    -2.99657
         2      -0.00000    -0.00000     2.99657
@@ -474,10 +635,13 @@ space
 observables
     energy eV
         -11.92742995
-    strain_derivative eV
-        1       0.25318
-        2       0.25318
-        3      -8.18439
+    stress
+        1       1.19887
+        2       1.19887
+        3     -38.75573
+        4      -0.00000
+        5      -0.00000
+        6      -0.00000
     gradients eV/Angs
         1      -0.00000    -0.00000    -4.16077
         2      -0.00000    -0.00000     4.16077
@@ -504,10 +668,13 @@ space
 observables
     energy eV
         -11.59561550
-    strain_derivative eV
-        1       0.22500
-        2       0.22500
-        3     -10.93498
+    stress
+        1       1.06546
+        2       1.06546
+        3     -51.78065
+        4      -0.00000
+        5      -0.00000
+        6      -0.00000
     gradients eV/Angs
         1      -0.00000    -0.00000    -5.66628
         2      -0.00000    -0.00000     5.66628
@@ -534,10 +701,13 @@ space
 observables
     energy eV
         -11.14774713
-    strain_derivative eV
-        1       0.16743
-        2       0.16743
-        3     -14.28474
+    stress
+        1       0.79283
+        2       0.79283
+        3     -67.64286
+        4      -0.00000
+        5       0.00000
+        6      -0.00000
     gradients eV/Angs
         1      -0.00000    -0.00000    -7.58878
         2      -0.00000    -0.00000     7.58878
@@ -564,10 +734,13 @@ space
 observables
     energy eV
         -10.55264075
-    strain_derivative eV
-        1       0.08058
-        2       0.08058
-        3     -18.30782
+    stress
+        1       0.38156
+        2       0.38156
+        3     -86.69347
+        4      -0.00000
+        5      -0.00000
+        6      -0.00000
     gradients eV/Angs
         1      -0.00000    -0.00000   -10.01503
         2      -0.00000    -0.00000    10.01503
@@ -594,10 +767,13 @@ space
 observables
     energy eV
         -9.77256509
-    strain_derivative eV
-        1      -0.03263
-        2      -0.03263
-        3     -23.08974
+    stress
+        1      -0.15451
+        2      -0.15451
+        3    -109.33742
+        4       0.00000
+        5      -0.00000
+        6      -0.00000
     gradients eV/Angs
         1      -0.00000    -0.00000   -13.05237
         2      -0.00000    -0.00000    13.05237
@@ -624,10 +800,13 @@ space
 observables
     energy eV
         -8.76103801
-    strain_derivative eV
-        1      -0.16382
-        2      -0.16382
-        3     -28.76882
+    stress
+        1      -0.77574
+        2      -0.77574
+        3    -136.22970
+        4       0.00000
+        5      -0.00000
+        6      -0.00000
     gradients eV/Angs
         1      -0.00000    -0.00000   -16.85919
         2      -0.00000    -0.00000    16.85919
@@ -654,10 +833,13 @@ space
 observables
     energy eV
         -7.45735279
-    strain_derivative eV
-        1      -0.30029
-        2      -0.30029
-        3     -35.62160
+    stress
+        1      -1.42198
+        2      -1.42198
+        3    -168.67981
+        4      -0.00000
+        5       0.00000
+        6      -0.00000
     gradients eV/Angs
         1      -0.00000    -0.00000   -21.70883
         2      -0.00000    -0.00000    21.70883

@@ -47,7 +47,7 @@ At the top of the file, a block of data is introduced by the comment:
 # ==============================
 ```
 
-This contains the "main" (initial) structure along with an `observables` block with the total energy, strain derivatives, gradients, the unique non-zero components of the calculated elastic-constant matrix and the calculated phonon frequencies and eigenvectors.
+This contains the "main" (initial) structure along with an `observables` block with the total energy, stress tensor, gradients, the unique non-zero components of the calculated elastic-constant matrix and the calculated phonon frequencies and eigenvectors.
 
 The elastic constants are also used to calculate bulk and shear moduli using the Voigt definitions:
 
@@ -63,13 +63,13 @@ observables
 Below this are several blocks of data with headings similar to the following:
 
 ```
-# Calculated energy, gradients and strain derivatives for SrO (Structure 2)
-# =========================================================================
+# Calculated energy, gradients and stresses for SrO (Structure 2)
+# ===============================================================
 ```
 
-These are the intermediate distorted/displaced structures along with the associated energies, gradients and strain derivatives.
+These are the intermediate distorted/displaced structures along with the associated energies, gradients and stresses.
 
-In this example, structures 2-25 correspond to lattice distortions, leading to changes in the stress tensor (strain derivatives). Structures 26-33 correspond to displacement of the O and Sr atoms along the <i>x</i> direction, producing opposing forces (gradients) on both atoms.
+In this example, structures 2-25 correspond to lattice distortions, leading to changes in the stress tensor. Structures 26-33 correspond to displacement of the O and Sr atoms along the <i>x</i> direction, producing opposing forces (gradients) on both atoms.
 
 Using optional command-line arguments to control the output
 -----------------------------------------------------------
@@ -127,15 +127,15 @@ These can be omitted using the `--first_structure` flag:
 
 `python OUTCARToGULP.py -f OUTCAR.ref -o SrO-First.gulp --add_commands --first_structure`
 
-The file `SrO-First.gulp` contains only one data block with the "main" structure and the calculated total energy, strain derivatives, gradients, elastic-constant matrix and phonon frequencies/eigenvectors.
+The file `SrO-First.gulp` contains only one data block with the "main" structure and the calculated total energy, stress tensor, gradients, elastic-constant matrix and phonon frequencies/eigenvectors.
 
 <h3>Limiting the output with gradient and stress thresholds</h3>
 
-Alternatively, if the aim is to optimise a potential for lattice distortions or larger atomic displacements, it may be useful to extract only the configurations with large gradients or strain derivatives.
+Alternatively, if the aim is to optimise a potential for lattice distortions or larger atomic displacements, it may be useful to extract only the configurations with large gradients or stresses.
 To do this, the `--gradient_threshold` and `--stress_threshold` arguments can be used:
 
-`python OUTCARToGULP.py -f OUTCAR.ref -o SrO-Threshold.gulp --add_commands --gradient_threshold=0.025 --stress_threshold=0.1`
+`python OUTCARToGULP.py -f OUTCAR.ref -o SrO-Threshold.gulp --add_commands --gradient_threshold=0.025 --stress_threshold=1.0`
 
-The output file `SrO-Threshold.gulp` now contains data sets for a subset of the 33 structures, with the others replaced by single-line comments indicating they were omitted because the gradients/strain derivatives were below the set thresholds:
+The output file `SrO-Threshold.gulp` now contains data sets for a subset of the 33 structures, with the others replaced by single-line comments indicating they were omitted because the gradients/sstresses were below the set thresholds:
 
-`# INFO: The gradient components and diagonal stress-tensor elements for structure 1 are below the set thresholds (gradients: 2.50e-02, stress: 1.00e-01) -> data set not output.`
+`# INFO: The gradient and/or stress-tensor components for structure 15 are below the set thresholds (gradients: 2.50e-02, stress: 1.00e+00) -> data set not output.`

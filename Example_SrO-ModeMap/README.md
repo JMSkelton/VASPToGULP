@@ -80,6 +80,6 @@ The script also accepts the `--gradient_threshold` and `--stress_threshold` comm
 
 `python OUTCARToGULP_ModeMap.py OUTCAR-* -o "SrO-ModeMap-Threshold.gulp" -n "q = (0, 0, 0), v = 6" --mode_map_csv="ModeMap_PostProcess.csv" --add_commands --gradient_threshold=1.0 --stress_threshold=1.0`
 
-The output `SrO-ModeMap-Threshold.gulp` now contains data sets for a subset of 22 of the 29 structures, with the others replaced by comments indicating why they were omitted:
+The output `SrO-ModeMap-Threshold.gulp` now contains data sets for a subset of the 29 structures, with the others replaced by comments indicating why they were omitted:
 
-`# INFO: The gradient components and diagonal stress-tensor elements for "SrO (Input File 12 w/ Q = -0.75)" (012/OUTCAR) are below the set thresholds (gradients: 1.00e+00, stress: 1.00e+00) -> data set not output.`
+`INFO: The gradient and/or stress-tensor components for "SrO (Input File 14 w/ Q = -0.25)" (OUTCAR-014) are below the set thresholds (gradients: 1.00e+00, stress: 1.00e+00) -> data set not output.`
